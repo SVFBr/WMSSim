@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout-padrao}">
+
+<body>
+
+	<section layout:fragment="conteudo">
+
+		<!-- 	INSERT  --------------------->
+
+		<div class="page-header">
+			<div class="container-fluid">
+				<h2>YANBOG - Create Articles</h2>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+
+
+			<form method="post" class="form-vertical  js-form-loading" th:object="${datModel}">
+
+				<div class="alert  alert-success"
+					th:if="${!#strings.isEmpty(mensagem)}">
+					<span th:text="${mensagem}"></span>
+				</div>
+				
+				<div class="form-group">
+					<label for="input-produto-nome">Wamas Host IP</label> 
+					<input id="host" type="text" required="required" class="form-control"	placeholder="000.000.000.000" th:field="*{wamasHostIpRequested}" />
+				</div>
+				
+
+				<div class="form-group">
+					<label for="input-produto-nome">How many "article_insert" lines should be created for:</label>
+				</div>
+
+				<div class="form-group">
+					<label for="input-produto-nome">AFrame</label> 
+					<input id="aframe" oninvalid="this.setCustomValidity('This field must be filled with integer numbers')" oninput="this.setCustomValidity('')" type="text" required="required" name="numbers" pattern="[0-9]+$" class="form-control"	placeholder="0" th:field="*{articleInsertAFrame}" />
+				</div>
+
+
+				<div class="form-group">
+					<label for="input-produto-nome">PBL</label> 
+					<input id="pbl" oninvalid="this.setCustomValidity('This field must be filled with integer numbers')" oninput="this.setCustomValidity('')" type="text" required="required" name="numbers" pattern="[0-9]+$" class="form-control" placeholder="0" th:field="*{articleInsertPbl}" />
+				</div>
+
+				<div class="form-group">
+					<label for="input-produto-nome">PDC</label> 
+					<input id="pdc" oninvalid="this.setCustomValidity('This field must be filled with integer numbers')" oninput="this.setCustomValidity('')" type="text" required="required" name="numbers" pattern="[0-9]+$" class="form-control" placeholder="0" th:field="*{articleInsertPdc}" />
+				</div>
+
+
+				<div class="form-group">
+					<button class="btn btn-primary" type="submit" name="generate_articles">Create and Send Files to Host</button>
+				</div>
+
+			</form>
+			
+			<!-- <input type="text" id="example"> --> 
+			<script type="text/javascript"> 
+					document.getElementById("host").setAttribute('value','192.168.173.222');		
+					document.getElementById("aframe").setAttribute('value','0');
+  					document.getElementById("pbl").setAttribute('value','0');
+  					document.getElementById("pdc").setAttribute('value','0');
+			</script>
+		</div>
+	</section>
+</body>
+</html>
