@@ -25,9 +25,9 @@ public class SocketSenderOrderInsertGeoTests {
 	
 	static String wamasHostIpRequested = "192.168.173.222";  //"10.34.234.2";
 
-	static int orderInsertAframe = 1;
-	static int orderInsertPbl = 1;
-	static int orderInsertPdc = 1;
+	static int orderInsertAframe = 0;
+	static int orderInsertPbl = 0;
+	static int orderInsertPdc = 0;
 
 	//*******************************************************************
 

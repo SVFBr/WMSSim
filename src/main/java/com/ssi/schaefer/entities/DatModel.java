@@ -37,7 +37,6 @@ public class DatModel implements Serializable {
 
 	@Transient
 	private String wamasHostIpRequested;
-	
 
 	public String getWamasHostIpRequested() {
 		return wamasHostIpRequested;
@@ -86,7 +85,7 @@ public class DatModel implements Serializable {
 	 * 
 	 */
 
-	@Transient	
+	@Transient
 	private String orderInsertAframe, orderInsertPblUp, orderInsertPblDown, orderInsertPblMixed, orderInsertPdc, orderInsertPrize, orderInsertMix;
 
 	public String getOrderInsertAframe() {
@@ -145,4 +144,38 @@ public class DatModel implements Serializable {
 		this.orderInsertMix = orderInsertMix;
 	}
 
+	/*
+	 * 
+	 * -------------- ORDER INSERT GEOTESTS
+	 * 
+	 */
+
+	@Transient
+	private String orderInsertAframeGeoTests, orderInsertPblGeoTests, orderInsertPdcGeoTests;
+
+	public String getOrderInsertAframeGeoTests() {
+		return orderInsertAframeGeoTests;
+	}
+
+	public void setOrderInsertAframeGeoTests(String orderInsertAframeGeoTests) {
+		this.orderInsertAframeGeoTests = orderInsertAframeGeoTests;
+	}
+
+	public String getOrderInsertPblGeoTests() {
+		return orderInsertPblGeoTests;
+	}
+
+	public void setOrderInsertPblGeoTests(String orderInsertPblGeoTests) {
+		this.orderInsertPblGeoTests = orderInsertPblGeoTests;
+	}
+
+	public String getOrderInsertPdcGeoTests() {
+		return orderInsertPdcGeoTests;
+	}
+
+	public void setOrderInsertPdcGeoTests(String orderInsertPdcGeoTests) {
+		this.orderInsertPdcGeoTests = orderInsertPdcGeoTests;
+	}
+
+	
 }

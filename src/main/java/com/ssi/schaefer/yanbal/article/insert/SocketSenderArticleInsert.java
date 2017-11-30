@@ -19,12 +19,13 @@ public class SocketSenderArticleInsert {
 	 **/
 	//*******************************************************************
 
-	static String wamasHostIpRequested = "192.168.173.222"; //"10.34.234.2";
+//	static String wamasHostIpRequested = "192.168.173.222"
+	static String wamasHostIpRequested = "10.34.234.2";
 	static String[] arrDevice = { "AF", "PB", "PD"};
 
-	static int articleInsertAFrame = 5; // 575
-	static int articleInsertPbl = 5; // 368
-	static int articleInsertPdc = 5; // 100
+	static int articleInsertAFrame = 575; // 575
+	static int articleInsertPbl = 368; // 368
+	static int articleInsertPdc = 100; // 100
 
 	//*******************************************************************
 

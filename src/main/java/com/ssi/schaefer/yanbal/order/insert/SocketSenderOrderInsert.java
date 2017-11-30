@@ -24,13 +24,13 @@ public class SocketSenderOrderInsert {
 	
 	static String wamasHostIpRequested = "192.168.173.222";  //"10.34.234.2";
 
-	static int orderInsertAframe = 0;
-	static int orderInsertPblUp = 0;
-	static int orderInsertPblDown = 0;
-	static int orderInsertPblMixed = 0;
-	static int orderInsertPdc = 0;
-	static int orderInsertPrize = 0;
-	static int orderInsertMix = 1;
+	static int orderInsertAframe = 5;
+	static int orderInsertPblUp = 5;
+	static int orderInsertPblDown = 5;
+	static int orderInsertPblMixed = 5;
+	static int orderInsertPdc = 5;
+	static int orderInsertPrize = 5;
+	static int orderInsertMix = 5;
 
 	//*******************************************************************
 

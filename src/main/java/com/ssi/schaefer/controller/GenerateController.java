@@ -54,8 +54,8 @@ public class GenerateController {
 	// LOCATIONS
 	// --------------------------------------------------------------------
 	@GetMapping("/yanbog/locations")
-	public String novoLocations(Model modelLocations) {
-		modelLocations.addAttribute(new DatModel());
+	public String novoLocations(Model model) {
+		model.addAttribute(new DatModel());
 		return "yanbog/generate-locations";
 	}
 
@@ -67,34 +67,34 @@ public class GenerateController {
 	}
 
 	// --------------------------------------------------------------------
-	// ORDERS 
+	// ORDERS
 	// --------------------------------------------------------------------
 	@GetMapping("/yanbog")
-	public String novoOrders(Model modelLocations) {
-		modelLocations.addAttribute(new DatModel());
+	public String novoOrders(Model model) {
+		model.addAttribute(new DatModel());
 		return "yanbog/generate-orders";
 	}
 
 	@PostMapping("/yanbog")
 	public String gerarOrders(int orderInsertAframe, int orderInsertPblUp, int orderInsertPblDown, int orderInsertPblMixed, int orderInsertPdc, int orderInsertPrize, int orderInsertMix, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
 		WebSenderOrderInsert webSenderOrderInsert = new WebSenderOrderInsert();
-		webSenderOrderInsert.createArticleInsert(orderInsertAframe, orderInsertPblUp, orderInsertPblDown, orderInsertPblMixed, orderInsertPdc, orderInsertPrize, orderInsertMix, wamasHostIpRequested) ;
+		webSenderOrderInsert.createArticleInsert(orderInsertAframe, orderInsertPblUp, orderInsertPblDown, orderInsertPblMixed, orderInsertPdc, orderInsertPrize, orderInsertMix, wamasHostIpRequested);
 		return "redirect:/yanbog";
 	}
 
 	// --------------------------------------------------------------------
-	// GEOTESTS 
+	// GEOTESTS
 	// --------------------------------------------------------------------
 	@GetMapping("/yanbog/geotests")
-	public String novoGeocodeTests(Model modelLocations) {
-		modelLocations.addAttribute(new DatModel());
+	public String novoGeocodeTests(Model model) {
+		model.addAttribute(new DatModel());
 		return "/yanbog/generate-geotests";
 	}
-	
+
 	@PostMapping("/yanbog/geotests")
-	public String gerarGeocodeTests(int orderInsertAframe, int orderInsertPblUp, int orderInsertPblDown, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
+	public String gerarGeocodeTests(int orderInsertAframeGeoTests, int orderInsertPblGeoTests, int orderInsertPdcGeoTests, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
 		WebSenderOrderInsertGeoTests webSenderOrderInsertGeoTests = new WebSenderOrderInsertGeoTests();
-		webSenderOrderInsertGeoTests.createArticleInsert(orderInsertAframe, orderInsertPblUp, orderInsertPblDown, wamasHostIpRequested) ;
+		webSenderOrderInsertGeoTests.createArticleInsert(orderInsertAframeGeoTests, orderInsertPblGeoTests, orderInsertPdcGeoTests, wamasHostIpRequested);
 		return "redirect:/yanbog/geotests";
 	}
 	/*

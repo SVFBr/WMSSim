@@ -23,30 +23,30 @@ public class WebSenderOrderInsertGeoTests {
 
 	static String[] arrDevice = { "AF", "P", "S0" };
 
-	public void createArticleInsert(int orderInsertAframe, int orderInsertPbl, int orderInsertPdc, String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
+	public void createArticleInsert(int orderInsertAframeGeoTests, int orderInsertPblGeoTests, int orderInsertPdcGeoTests, String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
-		if (orderInsertAframe > 0) {
+		if (orderInsertAframeGeoTests == 1) {
 			String deviceType = arrDevice[0];
-			int numberOfArticles = orderInsertAframe;
+			int numberOfArticles = orderInsertAframeGeoTests;
 			String folderName = "/orderInsertWebAframeGeoTests";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2700000, "2270000");
-//			SendByFTP.main(folderName, wamasHostIpRequested);
+			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		
-		if (orderInsertPbl > 0) {
+		if (orderInsertPblGeoTests == 1) {
 			String deviceType = arrDevice[1];
-			int numberOfArticles = orderInsertPbl;
+			int numberOfArticles = orderInsertPblGeoTests;
 			String folderName = "/orderInsertWebPblGeoTests";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2800000, "2800000");
-//			SendByFTP.main(folderName, wamasHostIpRequested);
+			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		
-		if (orderInsertPdc > 0) {
+		if (orderInsertPdcGeoTests == 1) {
 			String deviceType = arrDevice[2];
-			int numberOfArticles = orderInsertPdc;
+			int numberOfArticles = orderInsertPdcGeoTests;
 			String folderName = "/orderInsertWebPdcGeoTests";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2900000, "2900000");
-//			SendByFTP.main(folderName, wamasHostIpRequested);
+			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
 	}
