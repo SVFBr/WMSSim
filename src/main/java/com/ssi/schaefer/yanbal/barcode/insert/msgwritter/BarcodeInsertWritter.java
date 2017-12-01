@@ -27,6 +27,8 @@ public class BarcodeInsertWritter {
 
 	public static void main(String folderName, String deviceType, String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
+		//String selectArticlesByDevice = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_BARCODE)"; setar barcode p sku do cliente?
+		
 		String selectArticlesByDevice = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_BARCODE) AND SKU_CODE LIKE '" + deviceType + "%'";
 		List<HashMap<String, String>> mapArticles = DatabaseQueries.executeQuery(selectArticlesByDevice, wamasHostIpRequested);
 		

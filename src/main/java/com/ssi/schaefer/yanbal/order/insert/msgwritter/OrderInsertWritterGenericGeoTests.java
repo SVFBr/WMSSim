@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -34,14 +33,16 @@ public class OrderInsertWritterGenericGeoTests {
 		// GEOTESTS [CONTROLLER]
 		// --------------------------------------------------------------------
 
-		mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '227%'";
+		String ocs = StringUtils.left(orderCodeSetter, 3);
+
+		mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '" + ocs + "%'";
 		mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE LIKE '" + deviceType + "%' ORDER BY SKU_CODE";
-		
+
 		List<HashMap<String, String>> mapMaxOrderCode = DatabaseQueries.executeQuery(mapMaxOrderCodeSql, wamasHostIpRequested);
 		List<HashMap<String, String>> map = DatabaseQueries.executeQuery(mapSql, wamasHostIpRequested);
-		
+
 		files = map.size();
-		
+
 		CSVUtils.genPath(folderName);
 		CSVUtils.checkIfFileExistAt(folderName);
 
