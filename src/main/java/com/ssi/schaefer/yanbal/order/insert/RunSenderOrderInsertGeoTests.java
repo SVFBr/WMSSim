@@ -11,7 +11,7 @@ import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
 public class RunSenderOrderInsertGeoTests {
 
 	//*******************************************************************
-	/** 						 		  ORDER INSERT BY SOCKET GEOTESTS						 
+	/** 						 		  ORDER INSERT BY FTP GEOTESTS						 
 			                       .
 			        .-""`""-.    |(@ @)
 			     _/`oOoOoOoOo`\_ \ \-/

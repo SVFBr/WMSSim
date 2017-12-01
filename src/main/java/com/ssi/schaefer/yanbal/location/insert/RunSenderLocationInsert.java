@@ -9,7 +9,7 @@ import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
 public class RunSenderLocationInsert {
 
 	//*******************************************************************
-	/** 						 				LOCATION INSERT  						 
+	/** 						 				LOCATION INSERT BY FTP					 
 			                       .-.
 			        .-""`""-.    |(@ @)
 			     _/`oOoOoOoOo`\_ \ \-/
@@ -24,13 +24,13 @@ public class RunSenderLocationInsert {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
 
-		LocationInsertWritter.main("/locationInsertSocAf", "AF", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertSocAf", "AFR", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertAf", wamasHostIpRequested);
 
-		LocationInsertWritter.main("/locationInsertSocPb", "PB", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertSocPb", "PBL", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertPb", wamasHostIpRequested);
 
-		LocationInsertWritter.main("/locationInsertSocPd", "PD", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertSocPd", "BAJ", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertPd", wamasHostIpRequested);
 
 	}

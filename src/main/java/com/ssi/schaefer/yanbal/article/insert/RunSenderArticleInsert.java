@@ -9,7 +9,7 @@ import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
 public class RunSenderArticleInsert {
 
 	//*******************************************************************
-	/** 						 				ARTICLES INSERT BY SOCKET 						 
+	/** 						 				ARTICLES INSERT BY FTP 						 
 			                       .-.
 			        .-""`""-.    |(@ @)
 			     _/`oOoOoOoOo`\_ \ \-/

@@ -9,7 +9,7 @@ import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
 public class RunSenderBarcodeInsert {
 
 	//*******************************************************************
-	/** 						 				BARCODE INSERT  						 
+	/** 						 				BARCODE INSERT BY FTP						 
 			                       .-.
 			        .-""`""-.    |(@ @)
 			     _/`oOoOoOoOo`\_ \ \-/
@@ -25,13 +25,13 @@ public class RunSenderBarcodeInsert {
 	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
 
-		BarcodeInsertWritter.main("/barcodeInsertSocAf", "AF", wamasHostIpRequested);
-		//SendByFTP.main("/barcodeInsertSocAf", wamasHostIpRequested);
+		BarcodeInsertWritter.main("/barcodeInsertSocAf", "AFR", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertSocAf", wamasHostIpRequested);
 
-		BarcodeInsertWritter.main("/barcodeInsertSocPb", "PB", wamasHostIpRequested);
-		//SendByFTP.main("/barcodeInsertSocPb", wamasHostIpRequested);
+		BarcodeInsertWritter.main("/barcodeInsertSocPb", "PBL", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertSocPb", wamasHostIpRequested);
 
-		BarcodeInsertWritter.main("/barcodeInsertSocPd", "PD", wamasHostIpRequested);
-		//SendByFTP.main("/barcodeInsertSocPd", wamasHostIpRequested);
+		BarcodeInsertWritter.main("/barcodeInsertSocPd", "BAJ", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertSocPd", wamasHostIpRequested);
 	}
 }

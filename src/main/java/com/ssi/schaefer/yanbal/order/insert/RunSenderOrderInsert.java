@@ -10,7 +10,7 @@ import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
 public class RunSenderOrderInsert {
 
 	//*******************************************************************
-	/** 						 				ORDER INSERT BY SOCKET 						 
+	/** 						 				ORDER INSERT BY FTP 						 
 			                       .
 			        .-""`""-.    |(@ @)
 			     _/`oOoOoOoOo`\_ \ \-/
