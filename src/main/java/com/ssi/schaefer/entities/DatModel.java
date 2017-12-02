@@ -151,7 +151,7 @@ public class DatModel implements Serializable {
 	 */
 
 	@Transient
-	private String orderInsertAframeGeoTests, orderInsertPblGeoTests, orderInsertPdcGeoTests;
+	private String orderInsertAframeGeoTests, orderInsertPblGeoTests, orderInsertPdcGeoTests, orderInsertEachStation;
 
 	public String getOrderInsertAframeGeoTests() {
 		return orderInsertAframeGeoTests;
@@ -163,6 +163,14 @@ public class DatModel implements Serializable {
 
 	public String getOrderInsertPblGeoTests() {
 		return orderInsertPblGeoTests;
+	}
+
+	public String getOrderInsertEachStation() {
+		return orderInsertEachStation;
+	}
+
+	public void setOrderInsertEachStation(String orderInsertEachStation) {
+		this.orderInsertEachStation = orderInsertEachStation;
 	}
 
 	public void setOrderInsertPblGeoTests(String orderInsertPblGeoTests) {

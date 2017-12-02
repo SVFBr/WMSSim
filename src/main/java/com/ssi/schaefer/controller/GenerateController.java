@@ -75,9 +75,9 @@ public class GenerateController {
 	}
 	
 	@PostMapping("/yanbog/geo")
-	public String gerarGeo(int orderInsertAframeGeoTests, int orderInsertPblGeoTests, int orderInsertPdcGeoTests, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
+	public String gerarGeo(int orderInsertAframeGeoTests, int orderInsertPblGeoTests, int orderInsertPdcGeoTests, int orderInsertEachStation, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
 		WebSenderOrderInsertGeoTests webSenderOrderInsertGeoTests = new WebSenderOrderInsertGeoTests();
-		webSenderOrderInsertGeoTests.createArticleInsert(orderInsertAframeGeoTests, orderInsertPblGeoTests, orderInsertPdcGeoTests, wamasHostIpRequested);
+		webSenderOrderInsertGeoTests.createArticleInsert(orderInsertAframeGeoTests, orderInsertPblGeoTests, orderInsertPdcGeoTests, orderInsertEachStation, wamasHostIpRequested);
 		return "redirect:/yanbog/geo";
 	}
 

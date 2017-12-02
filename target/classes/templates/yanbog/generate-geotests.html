@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout-padrao}">
+
+<body>
+	<section layout:fragment="conteudo">
+
+		<!-- 	INSERT  --------------------->
+
+		<div class="page-header">
+			<div class="container-fluid">
+				<h2>YANBOG - Create GeoTests</h2>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+
+			<form method="post" class="form-vertical  js-form-loading" th:object="${datModel}">
+				
+					<div class="alert  alert-success" th:if="${!#strings.isEmpty(mensagem)}">		<span th:text="${mensagem}"></span>		</div>
+
+				<div class="form-group">
+					<label for="input-produto-nome">Wamas Host IP</label> 
+					<input id="host" type="text" required="required" class="form-control"	placeholder="000.000.000.000" th:field="*{wamasHostIpRequested}" />
+				</div>
+								
+				<div class="form-group">
+					<label for="input-produto-nome">Set 1 (one) to send orders for ALL geocodes from device:</label>
+				</div>				
+				
+				<div class="form-group">
+					<label for="input-produto-nome">AFrame (order nº i.e.: 2700000)</label> 
+					<input id="aframe" oninvalid="this.setCustomValidity('This field must be filled with integer numbers')" oninput="this.setCustomValidity('')" type="text" required="required" name="numbers" pattern="[0-9]+$" class="form-control" placeholder="0" th:field="*{orderInsertAframeGeoTests}" />
+				</div>
+
+				<div class="form-group">
+					<label for="input-produto-nome">Pbl] (order nº i.e.: 2800000)</label> 
+					<input id="pbl" oninvalid="this.setCustomValidity('This field must be filled with integer numbers')" oninput="this.setCustomValidity('')" type="text" required="required" name="numbers" pattern="[0-9]+$" class="form-control" placeholder="0" th:field="*{orderInsertPblGeoTests}" />
+				</div>
+
+				<div class="form-group">
+					<label for="input-produto-nome">Pdc (order nº i.e.: 2900000)</label> 
+					<input id="pdc" oninvalid="this.setCustomValidity('This field must be filled with integer numbers')" oninput="this.setCustomValidity('')" type="text" required="required" name="numbers" pattern="[0-9]+$" class="form-control" placeholder="0" th:field="*{orderInsertPdcGeoTests}" />
+				</div>
+
+
+				<div class="form-group">
+					<button class="btn btn-primary" type="submit" name="generate_geotests">Create and Send Files to Host</button>
+				</div>
+
+			</form>
+			
+			<!-- <input type="text" id="example"> --> 
+			<script type="text/javascript"> 
+					document.getElementById("host").setAttribute('value','10.34.234.2');		
+					document.getElementById("aframe").setAttribute('value','0');
+  					document.getElementById("pbl").setAttribute('value','0');
+  					document.getElementById("pdc").setAttribute('value','0');
+			</script>
+			
+		</div>
+	</section>
+</body>
+</html>

@@ -20,18 +20,17 @@ public class RunSenderBarcodeInsert {
 	//*******************************************************************
 
 	static String wamasHostIpRequested = "192.168.173.222";
-	
-	//static String wamasHostIpRequested = "10.34.234.2";
-	
+//	static String wamasHostIpRequested = "10.34.234.2";
+
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
 
-		BarcodeInsertWritter.main("/barcodeInsertSocAf", "AFR", wamasHostIpRequested);
-		SendByFTP.main("/barcodeInsertSocAf", wamasHostIpRequested);
+		BarcodeInsertWritter.main("/barcodeInsertAFR", "AFR", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertAFR", wamasHostIpRequested);
 
-		BarcodeInsertWritter.main("/barcodeInsertSocPb", "PBL", wamasHostIpRequested);
-		SendByFTP.main("/barcodeInsertSocPb", wamasHostIpRequested);
+		BarcodeInsertWritter.main("/barcodeInsertPBL", "PBL", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertPBL", wamasHostIpRequested);
 
-		BarcodeInsertWritter.main("/barcodeInsertSocPd", "BAJ", wamasHostIpRequested);
-		SendByFTP.main("/barcodeInsertSocPd", wamasHostIpRequested);
+		BarcodeInsertWritter.main("/barcodeInserBAJ", "BAJ", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertBAJ", wamasHostIpRequested);
 	}
 }

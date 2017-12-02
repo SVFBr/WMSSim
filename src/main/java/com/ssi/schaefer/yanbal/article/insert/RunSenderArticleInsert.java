@@ -9,23 +9,28 @@ import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
 public class RunSenderArticleInsert {
 
 	//*******************************************************************
-	/** 						 				ARTICLES INSERT BY FTP 						 
+	/** 						 				   ARTICLES INSERT BY FTP 						 
 			                       .-.
 			        .-""`""-.    |(@ @)
 			     _/`oOoOoOoOo`\_ \ \-/
 			    '.-=-=-=-=-=-=-.' \/ \
-			      `-=.=-.-=.=-'    \ /\		1942
-			         ^  ^  ^       _H_ \    [575 afr] [368 pbl] [999 BAJ]
-	 **/
+			      `-=.=-.-=.=-'    \ /\					
+			         ^  ^  ^       _H_ \    
+			                           			1942 GEOCODES TOTAL YANBOG
+															    575 AFRAME    
+																   368 PBL    
+																   999 PDC    
+	**/
 	//*******************************************************************
 
-//	static String wamasHostIpRequested = "192.168.173.222";
+	//	static String wamasHostIpRequested = "192.168.173.222";
 	static String wamasHostIpRequested = "10.34.234.2";
-	static String[] arrDevice = { "AFR", "PBL", "BAJ"};
 
-	static int articleInsertAFrame = 575; // 575
-	static int articleInsertPbl = 368; // 368
-	static int articleInsertPdc = 999; // 999
+	static String[] arrDevice = { "AFR", "PBL", "BAJ" };
+
+	static int articleInsertAFrame = 575;
+	static int articleInsertPbl = 368;
+	static int articleInsertPdc = 999;
 
 	//*******************************************************************
 
@@ -34,7 +39,7 @@ public class RunSenderArticleInsert {
 		if (articleInsertAFrame > 0) {
 			String deviceType = arrDevice[0];
 			int numberOfArticles = articleInsertAFrame;
-			String folderName = "/articleInsertSocAf";
+			String folderName = "/articleInsertAFR";
 			ArticleInsertWritter.main(folderName, deviceType, wamasHostIpRequested, numberOfArticles);
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
@@ -42,7 +47,7 @@ public class RunSenderArticleInsert {
 		if (articleInsertPbl > 0) {
 			String deviceType = arrDevice[1];
 			int numberOfArticles = articleInsertPbl;
-			String folderName = "/articleInsertSocPb";
+			String folderName = "/articleInsertPBL";
 			ArticleInsertWritter.main(folderName, deviceType, wamasHostIpRequested, numberOfArticles);
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
@@ -50,11 +55,10 @@ public class RunSenderArticleInsert {
 		if (articleInsertPdc > 0) {
 			String deviceType = arrDevice[2];
 			int numberOfArticles = articleInsertPdc;
-			String folderName = "/articleInsertSocPd";
+			String folderName = "/articleInsertBAJ";
 			ArticleInsertWritter.main(folderName, deviceType, wamasHostIpRequested, numberOfArticles);
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
-		
-		
+
 	}
 }

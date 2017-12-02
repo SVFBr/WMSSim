@@ -27,13 +27,11 @@ public class BarcodeInsertWritter {
 
 	public static void main(String folderName, String deviceType, String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
-		//String selectArticlesByDevice = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_BARCODE)"; setar barcode p sku do cliente?
-		
-		String selectArticlesByDevice = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_BARCODE) AND SKU_CODE LIKE '" + deviceType + "%'";
+		String selectArticlesByDevice = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_BARCODE) AND SKU_CODE LIKE '" + deviceType + "%' ORDER BY SKU_CODE";
 		List<HashMap<String, String>> mapArticles = DatabaseQueries.executeQuery(selectArticlesByDevice, wamasHostIpRequested);
-		
+
 		System.out.println(mapArticles.size() + " SKUs sem barcodes para " + deviceType);
-		
+
 		if (mapArticles.size() > 0) {
 
 			CSVUtils.checkIfFileExistAt(folderName);
@@ -49,7 +47,7 @@ public class BarcodeInsertWritter {
 			CSVUtils.writeLine(writer, Arrays.asList("</barcodes>"));
 			writer.flush();
 			writer.close();
-			
+
 		}
 	}
 }

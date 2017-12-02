@@ -26,17 +26,17 @@ public class LocationInsertWritter {
 
 	public static void main(String folderName, String deviceType, String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
-		if (deviceType == "AF") {
+		if (deviceType == "AFR") {
 			mapLocationSql = "SELECT * FROM PWX.LOCATION WHERE GEOCODE_DEVICE LIKE 'AF%' ORDER BY GEOCODE ASC";
-			mapSkuCodeSql = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_LOCATION_MAP) AND SKU_CODE LIKE 'AF%'";
+			mapSkuCodeSql = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_LOCATION_MAP) AND SKU_CODE LIKE 'AF%' ORDER BY SKU_CODE";
 		}
-		if (deviceType == "PB") {
+		if (deviceType == "PBL") {
 			mapLocationSql = "SELECT * FROM PWX.LOCATION WHERE GEOCODE_DEVICE BETWEEN 'P01' AND 'P19' AND GEOCODE NOT LIKE 'MPF%' ORDER BY GEOCODE ASC";
-			mapSkuCodeSql = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_LOCATION_MAP) AND SKU_CODE LIKE 'PB%'";
+			mapSkuCodeSql = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_LOCATION_MAP) AND SKU_CODE LIKE 'PB%' ORDER BY SKU_CODE";
 		}
-		if (deviceType == "PD") {
+		if (deviceType == "BAJ") {
 			mapLocationSql = "SELECT * FROM PWX.LOCATION WHERE GEOCODE_DEVICE LIKE 'PD%' ORDER BY GEOCODE ASC";
-			mapSkuCodeSql = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_LOCATION_MAP) AND SKU_CODE LIKE 'PD%'";
+			mapSkuCodeSql = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_LOCATION_MAP) AND SKU_CODE LIKE 'BAJ%' ORDER BY SKU_CODE";
 		}
 
 		List<HashMap<String, String>> mapLocation = DatabaseQueries.executeQuery(mapLocationSql, wamasHostIpRequested);

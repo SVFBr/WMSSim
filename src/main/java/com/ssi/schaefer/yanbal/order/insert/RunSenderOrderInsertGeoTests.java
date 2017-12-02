@@ -25,9 +25,9 @@ public class RunSenderOrderInsertGeoTests {
 	
 	static String wamasHostIpRequested = "192.168.173.222";  //"10.34.234.2";
 
-	static int orderInsertAframe = 0;
-	static int orderInsertPbl = 0;
-	static int orderInsertPdc = 0;
+	static int orderInsertAframe = 1;
+	static int orderInsertPbl = 1;
+	static int orderInsertPdc = 1;
 	static int orderInsertEachStation = 1;
 
 	//*******************************************************************
@@ -37,7 +37,7 @@ public class RunSenderOrderInsertGeoTests {
 		if (orderInsertAframe > 0) {
 			String deviceType = arrDevice[0];
 			int numberOfArticles = orderInsertAframe;
-			String folderName = "/orderInsertSocAframeGeoTests";
+			String folderName = "/orderInsertAFRgt";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2700000, "2700000");
 			//SendByFTP.main(folderName, wamasHostIpRequested);
 		}
@@ -45,7 +45,7 @@ public class RunSenderOrderInsertGeoTests {
 		if (orderInsertPbl > 0) {
 			String deviceType = arrDevice[1];
 			int numberOfArticles = orderInsertPbl;
-			String folderName = "/orderInsertSocPblGeoTests";
+			String folderName = "/orderInsertPBLgt";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2800000, "2800000");
 			//SendByFTP.main(folderName, wamasHostIpRequested);
 		}
@@ -53,7 +53,7 @@ public class RunSenderOrderInsertGeoTests {
 		if (orderInsertPdc > 0) {
 			String deviceType = arrDevice[2];
 			int numberOfArticles = orderInsertPdc;
-			String folderName = "/orderInsertSocPdcGeoTests";
+			String folderName = "/orderInsertBAJgt";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2900000, "2900000");
 			//SendByFTP.main(folderName, wamasHostIpRequested);
 		}
@@ -61,7 +61,7 @@ public class RunSenderOrderInsertGeoTests {
 		if (orderInsertEachStation > 0) {
 			String deviceType = arrDevice[3];
 			int numberOfArticles = orderInsertEachStation;
-			String folderName = "/orderInsertSocEachStationGeoTests";
+			String folderName = "/orderInsertEACHSTATIONgt";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 3000000, "3000000");
 			//SendByFTP.main(folderName, wamasHostIpRequested);
 		}

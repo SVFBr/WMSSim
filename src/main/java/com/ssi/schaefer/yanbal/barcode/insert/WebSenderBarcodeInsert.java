@@ -20,7 +20,7 @@ import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 public class WebSenderBarcodeInsert {
 
 	//*******************************************************************
-	/** 						 				BARCODE INSERT  						 
+	/** 						 				BARCODE INSERT BY WEB  						 
 			                       .-.
 			        .-""`""-.    |(@ @)
 			     _/`oOoOoOoOo`\_ \ \-/
@@ -32,13 +32,13 @@ public class WebSenderBarcodeInsert {
 
 	public void createBarcodeInsert(String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
-		BarcodeInsertWritter.main("/barcodeInsertAf", "AF", wamasHostIpRequested);
-		SendByFTP.main("/barcodeInsertAf", wamasHostIpRequested);
+		BarcodeInsertWritter.main("/barcodeInsertAFR", "AFR", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertAFR", wamasHostIpRequested);
 
-		BarcodeInsertWritter.main("/barcodeInsertPb", "PB", wamasHostIpRequested);
-		SendByFTP.main("/barcodeInsertPb", wamasHostIpRequested);
+		BarcodeInsertWritter.main("/barcodeInsertPBL", "PBL", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertPBL", wamasHostIpRequested);
 
-		BarcodeInsertWritter.main("/barcodeInsertPd", "PD", wamasHostIpRequested);
-		SendByFTP.main("/barcodeInsertPd", wamasHostIpRequested);
+		BarcodeInsertWritter.main("/barcodeInserBAJ", "BAJ", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertBAJ", wamasHostIpRequested);
 	}
 }

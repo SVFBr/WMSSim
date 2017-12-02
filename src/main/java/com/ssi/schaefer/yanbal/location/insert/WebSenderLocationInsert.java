@@ -33,13 +33,13 @@ public class WebSenderLocationInsert {
 
 	public void createBarcodeInsert(String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
-		LocationInsertWritter.main("/locationInsertAf", "AF", wamasHostIpRequested);
-		SendByFTP.main("/locationInsertAf", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertAf", "AFF", wamasHostIpRequested);
+		SendByFTP.main("/locationInsertAFR", wamasHostIpRequested);
 
-		LocationInsertWritter.main("/locationInsertPb", "PB", wamasHostIpRequested);
-		SendByFTP.main("/locationInsertPb", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertPb", "PBL", wamasHostIpRequested);
+		SendByFTP.main("/locationInsertPBL", wamasHostIpRequested);
 
-		LocationInsertWritter.main("/locationInsertPd", "PD", wamasHostIpRequested);
-		SendByFTP.main("/locationInsertPd", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertPd", "BAJ", wamasHostIpRequested);
+		SendByFTP.main("/locationInsertBAJ", wamasHostIpRequested);
 	}
 }

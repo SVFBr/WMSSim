@@ -30,7 +30,7 @@ public class OrderInsertWritterPrize {
 
 	public static void main(String deviceType, int numberOfArticles, String folderName, String wamasHostIpRequested, int incrementPageNumber, String orderCodeSetter) throws ClassNotFoundException, SQLException, IOException {
 
-		if (deviceType == "prize") {
+		if (deviceType == "PRIZE") {
 			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST";
 			files = numberOfArticles;
 		}
