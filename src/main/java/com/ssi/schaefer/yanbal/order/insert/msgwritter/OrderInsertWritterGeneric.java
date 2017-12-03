@@ -65,10 +65,11 @@ public class OrderInsertWritterGeneric {
 			files = numberOfArticles;
 		}
 
-		try {
+		List<HashMap<String, String>> mapMaxOrderCode = DatabaseQueries.executeQuery(mapMaxOrderCodeSql, wamasHostIpRequested);
+		List<HashMap<String, String>> map = DatabaseQueries.executeQuery(mapSql, wamasHostIpRequested);
 
-			List<HashMap<String, String>> mapMaxOrderCode = DatabaseQueries.executeQuery(mapMaxOrderCodeSql, wamasHostIpRequested);
-			List<HashMap<String, String>> map = DatabaseQueries.executeQuery(mapSql, wamasHostIpRequested);
+		if (map.size() > 0) {
+
 			CSVUtils.genPath(folderName);
 			CSVUtils.checkIfFileExistAt(folderName);
 
@@ -89,7 +90,7 @@ public class OrderInsertWritterGeneric {
 			for (int fl = 1; fl <= files; fl++) {
 				// ORDER_CODE
 				orderNumber++;
-				System.out.print("OR.............: ");
+				System.out.print("\n" + deviceType + " OR.............: ");
 				String orNum = Integer.toString(orderNumber);
 				System.out.print(StringUtils.leftPad(orNum, 7, "0"));
 				System.out.print("\n");
@@ -134,9 +135,8 @@ public class OrderInsertWritterGeneric {
 					}
 				}
 			}
-		} catch (Exception e) {
-			System.out.println("\nTABLE SKU_LOCATION MAP was not filled out for: " + deviceType + "\n" + e + "\n");
+		} else {
+			System.out.println("\n Table SKU_LOCATION_MAP was not filled out for: " + deviceType + "\n");
 		}
-
 	}
 }

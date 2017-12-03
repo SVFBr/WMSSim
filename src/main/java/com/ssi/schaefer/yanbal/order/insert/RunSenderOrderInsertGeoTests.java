@@ -23,7 +23,8 @@ public class RunSenderOrderInsertGeoTests {
 
 	static String[] arrDevice = { "AF", "P", "BAJ" , "EACH_STATIONS"};
 	
-	static String wamasHostIpRequested = "192.168.173.222";  //"10.34.234.2";
+	//static String wamasHostIpRequested = "192.168.173.222";
+	static String wamasHostIpRequested = "10.34.234.2";
 
 	static int orderInsertAframe = 1;
 	static int orderInsertPbl = 1;

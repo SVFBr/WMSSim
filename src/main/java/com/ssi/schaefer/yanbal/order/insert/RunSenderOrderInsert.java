@@ -22,16 +22,16 @@ public class RunSenderOrderInsert {
 
 	static String[] arrDevice = { "AFR", "PBLUP", "PBLDOWN", "PBLMIX", "BAJ", "PRIZE", "MIX", };
 
-	static String wamasHostIpRequested = "10.34.234.2";
 	//static String wamasHostIpRequested = "192.168.173.222";
+	static String wamasHostIpRequested = "10.34.234.2";
 	
-	static int orderInsertAframe = 5;
-	static int orderInsertPblUp = 5;
-	static int orderInsertPblDown = 5;
-	static int orderInsertPblMixed = 5;
-	static int orderInsertPdc = 5;
-	static int orderInsertPrize = 5;
-	static int orderInsertMix = 5;
+	static int orderInsertAframe = 1;
+	static int orderInsertPblUp = 1;
+	static int orderInsertPblDown = 1;
+	static int orderInsertPblMixed = 1;
+	static int orderInsertPdc = 1;
+	static int orderInsertPrize = 1;
+	static int orderInsertMix = 1;
 
 	//*******************************************************************
 
