@@ -9,14 +9,18 @@ import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
 public class WebSenderArticleInsert {
 
 	//*******************************************************************
-	/** 						 				ARTICLES INSERT BY WEB 						 
+	/** 						 				   ARTICLES INSERT BY WEB 						 
 			                       .-.
 			        .-""`""-.    |(@ @)
 			     _/`oOoOoOoOo`\_ \ \-/
 			    '.-=-=-=-=-=-=-.' \/ \
-			      `-=.=-.-=.=-'    \ /\		1942
-			         ^  ^  ^       _H_ \    [575 afr] [368 pbl] [999 BAJ]
-	 **/
+			      `-=.=-.-=.=-'    \ /\					
+			         ^  ^  ^       _H_ \    
+			                           			1942 GEOCODES TOTAL YANBOG
+															    575 AFRAME    
+																   368 PBL    
+																   999 PDC    
+	**/
 	//*******************************************************************
 
 	static String[] arrDevice = { "AFR", "PBL", "BAJ" };

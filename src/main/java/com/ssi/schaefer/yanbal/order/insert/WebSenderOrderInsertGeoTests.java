@@ -30,7 +30,7 @@ public class WebSenderOrderInsertGeoTests {
 			int numberOfArticles = orderInsertAframeGeoTests;
 			String folderName = "/orderInsertAFRg";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2700000, "2700000");
-			//SendByFTP.main(folderName, wamasHostIpRequested);
+			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		
 		if (orderInsertPblGeoTests > 0) {
@@ -38,7 +38,7 @@ public class WebSenderOrderInsertGeoTests {
 			int numberOfArticles = orderInsertPblGeoTests;
 			String folderName = "/orderInsertPBLg";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2800000, "2800000");
-			//SendByFTP.main(folderName, wamasHostIpRequested);
+			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		
 		if (orderInsertPdcGeoTests > 0) {
@@ -46,7 +46,7 @@ public class WebSenderOrderInsertGeoTests {
 			int numberOfArticles = orderInsertPdcGeoTests;
 			String folderName = "/orderInsertBAJg";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2900000, "2900000");
-			//SendByFTP.main(folderName, wamasHostIpRequested);
+			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		
 		if (orderInsertEachStation > 0) {
@@ -54,7 +54,7 @@ public class WebSenderOrderInsertGeoTests {
 			int numberOfArticles = orderInsertEachStation;
 			String folderName = "/orderInsertEACHSTATIONg";
 			OrderInsertWritterGenericGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 3000000, "3000000");
-			//SendByFTP.main(folderName, wamasHostIpRequested);
+			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
 	}
