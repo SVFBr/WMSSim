@@ -36,12 +36,11 @@ public class OrderInsertWritterGenericGeoTests {
 		String ocs = StringUtils.left(orderCodeSetter, 3);
 
 		if (deviceType == "EACH_STATIONS") {
+			OrderInsertWritterGenericGeoTestsEachStation.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, incrementPageNumber, orderCodeSetter);
+		} 
 			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '" + ocs + "%'";
 			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE LIKE '" + deviceType + "%' ORDER BY SKU_CODE";
-		} else {
-			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '" + ocs + "%'";
-			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE LIKE '" + deviceType + "%' ORDER BY SKU_CODE";
-		}
+		
 
 		List<HashMap<String, String>> mapMaxOrderCode = DatabaseQueries.executeQuery(mapMaxOrderCodeSql, wamasHostIpRequested);
 		List<HashMap<String, String>> map = DatabaseQueries.executeQuery(mapSql, wamasHostIpRequested);
