@@ -32,8 +32,12 @@ public class OrderInsertWritterOneToEachStation {
 
 	public static void main(String deviceType, int numberOfArticles, String folderName, String wamasHostIpRequested, int incrementPageNumber, String orderCodeSetter) throws ClassNotFoundException, SQLException, IOException {
 
-		CSVUtils.genPath(folderName);
-		CSVUtils.checkIfFileExistAt(folderName);
+		List<HashMap<String, String>> mapGP = DatabaseQueries.executeQuery("SELECT SKU.SKU_CODE, L.GEOCODE, L.GEOCODE_DEVICE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID", wamasHostIpRequested);
+		if (mapGP.size() > 0) {
+			CSVUtils.genPath(folderName);
+			CSVUtils.checkIfFileExistAt(folderName);
+		}
+
 		files = numberOfArticles;
 
 		mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '810%'";
@@ -53,7 +57,8 @@ public class OrderInsertWritterOneToEachStation {
 
 		String[] arrEachStation = { "AFP01", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "PDC" };
 
-		for (int i = 0; i < arrEachStation.length; i++) {
+		int i = 0;
+		for (i = 0; i < arrEachStation.length; i++) {
 
 			mapSql = "SELECT SKU.SKU_CODE, L.GEOCODE, L.GEOCODE_DEVICE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE_DEVICE LIKE '" + arrEachStation[i] + "%'";
 			map = DatabaseQueries.executeQuery(mapSql, wamasHostIpRequested);
@@ -69,9 +74,11 @@ public class OrderInsertWritterOneToEachStation {
 					System.out.print(StringUtils.leftPad(orNum, 7, "0"));
 					System.out.print("\n");
 					for (int or = 1; or <= 1; or++) {
+					
 						// LINES
 						File pathOnePage = CSVUtils.genPath(folderName);
 						String csvFileOnePAge = pathOnePage + "/" + String.format("%07d", incrementPageNumber++) + ".dat";
+						
 						FileWriter writerOnePAge = new FileWriter(csvFileOnePAge);
 						CSVUtils.writeLine(writerOnePAge, Arrays.asList("<order_insert order_id=\"" + StringUtils.leftPad(orNum, 7, "0") + "\" " + "sub_order_id=\"1" + "\" host_order_id=\"SPY\"" + " tu_type=\"" + Tools.getRandBoxType() + "\"" + " check=\"false\" departure_time=\"172531\" departure_date=\"20171105\" print=\"false\">"));
 						CSVUtils.writeLine(writerOnePAge, Arrays.asList(" <station station_id=\"POP" + Tools.getRandRotate(1, 2) + "\"/>"));
@@ -87,8 +94,9 @@ public class OrderInsertWritterOneToEachStation {
 					}
 				}
 			} else {
-				System.out.println("\n Table SKU_LOCATION_MAP was not filled out for: " + deviceType + "\n");
+				System.out.println("\n Table SKU_LOCATION_MAP was not filled out for: " + arrEachStation[i] + "\n");
 			}
 		}
 	}
+
 }

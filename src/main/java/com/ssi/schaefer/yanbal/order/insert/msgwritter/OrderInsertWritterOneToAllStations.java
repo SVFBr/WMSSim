@@ -34,8 +34,12 @@ public class OrderInsertWritterOneToAllStations {
 
 		String[] arrEachStation = { "AFP01", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "PDC" };
 
-		CSVUtils.genPath(folderName);
-		CSVUtils.checkIfFileExistAt(folderName);
+		List<HashMap<String, String>> mapGP = DatabaseQueries.executeQuery("SELECT SKU.SKU_CODE, L.GEOCODE, L.GEOCODE_DEVICE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID", wamasHostIpRequested);
+		if (mapGP.size() > 0) {
+			CSVUtils.genPath(folderName);
+			CSVUtils.checkIfFileExistAt(folderName);
+		}
+
 		files = numberOfArticles;
 
 		mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '820%'";
@@ -72,6 +76,7 @@ public class OrderInsertWritterOneToAllStations {
 			for (int li = 0; li < arrEachStation.length; li++) {
 				mapSql = "SELECT SKU.SKU_CODE, L.GEOCODE, L.GEOCODE_DEVICE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE_DEVICE LIKE '" + arrEachStation[li] + "%'";
 				map = DatabaseQueries.executeQuery(mapSql, wamasHostIpRequested);
+				
 				System.out.println("    li: " + li);
 				CSVUtils.writeLine(writerOnePAge, Arrays.asList("	<line article_id=\"" + map.get(0).get("SKU_CODE") + "\"" + " ordered_packunits=\"" + Tools.getRandRotate(1, 7) + "\" packunit_size=\"1\" host_line_id=\"" + li + "\"/>"));
 			}
