@@ -65,17 +65,15 @@ public class OrderInsertWritterOneToEachStation {
 
 			if (map.size() > 0) {
 
-				// FILES
 				for (int fl = 1; fl <= files; fl++) {
-					// ORDER_CODE
+					
 					orderNumber++;
 					System.out.print("\n" + deviceType + " OR.............: ");
 					String orNum = Integer.toString(orderNumber);
 					System.out.print(StringUtils.leftPad(orNum, 7, "0"));
 					System.out.print("\n");
-					for (int or = 1; or <= 1; or++) {
 					
-						// LINES
+					for (int or = 1; or <= 1; or++) {
 						File pathOnePage = CSVUtils.genPath(folderName);
 						String csvFileOnePAge = pathOnePage + "/" + String.format("%07d", incrementPageNumber++) + ".dat";
 						

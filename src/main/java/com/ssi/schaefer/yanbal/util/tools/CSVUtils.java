@@ -5,10 +5,12 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+
 public class CSVUtils {
 
 	private static final char DEFAULT_SEPARATOR = ' ';
-	private static String localDirPath = "e:/downloads/_ToFTP";
+	private static String localDirPath = "e:/_ToFTP";
 
 	public static void writeLine(Writer w, List<String> values) throws IOException {
 		writeLine(w, values, DEFAULT_SEPARATOR, ' ');
@@ -58,23 +60,30 @@ public class CSVUtils {
 	}
 
 	public static File genPath(String folderName) {
-		//String home = System.getProperty("user.home");
-		//File path = new File(home + File.separator + "_ToFTP" + File.separator + folderName);
+		// String home = System.getProperty("user.home");
+		// File path = new File(home + File.separator + "_ToFTP" + File.separator +
+		// folderName);
 		File path = new File(localDirPath + folderName);
 		path.mkdirs();
 		return path;
 	}
 
 	public static void checkIfFileExistAt(String folderName) {
-		//String home = System.getProperty("user.home");
-		//File path = new File(home + File.separator + "_ToFTP" + File.separator + folderName);
+		// String home = System.getProperty("user.home");
+		// File path = new File(home + File.separator + "_ToFTP" + File.separator +
+		// folderName);
 		File path = new File(localDirPath + folderName);
 		String[] entries = path.list();
 		if (entries != null) {
-		for (String string : entries) {
-			File currentFile = new File(path.getPath(), string);
-			currentFile.delete();
-		}}
+			for (String string : entries) {
+				File currentFile = new File(path.getPath(), string);
+				currentFile.delete();
+			}
+		}
+	}
+
+	public static void deleteAllFolders() throws IOException {
+		FileUtils.deleteDirectory(new File(localDirPath));
 	}
 
 }

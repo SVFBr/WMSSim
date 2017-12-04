@@ -9,6 +9,7 @@ import com.ssi.schaefer.yanbal.order.insert.msgwritter.OrderInsertWritterOneToAl
 import com.ssi.schaefer.yanbal.order.insert.msgwritter.OrderInsertWritterOneToEachStation;
 import com.ssi.schaefer.yanbal.order.insert.msgwritter.OrderInsertWritterPrize;
 import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
+import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 
 public class RunSenderOrderInsert {
 
@@ -19,27 +20,26 @@ public class RunSenderOrderInsert {
 	 **/
 	// *******************************************************************
 
-//	 static String wamasHostIpRequested = "192.168.173.222";
-	static String wamasHostIpRequested = "10.34.234.2";
+	 static String wamasHostIpRequested = "192.168.173.222";
+//	static String wamasHostIpRequested = "10.34.234.2";
 
 	static String[] arrDevice = { "AFR", "PBLUP", "PBLDOWN", "PBLMIX", "BAJ", "PRIZE", "MIX" };
 	static String[] arrDeviceII = { "OneToEachStation", "OneToAllStations", "AF", "P", "BAJ" };
 
 	// HERE YOU MUST INDICATE HOW MANY ORDERS SHOULD BE SEND TO HOST
 
-	static int orderInsertAframe = 0;
-	static int orderInsertPblUp = 0;
-	static int orderInsertPblDown = 0;
-	static int orderInsertPblMixed = 0;
-	static int orderInsertPdc = 0;
-	static int orderInsertPrize = 0;
-	static int orderInsertMix = 0;
+	static int orderInsertAframe = 1;
+	static int orderInsertPblUp = 1;
+	static int orderInsertPblDown = 1;
+	static int orderInsertPblMixed = 1;
+	static int orderInsertPdc = 1;
+	static int orderInsertPrize = 1;
+	static int orderInsertMix = 1;
 
-	static int orderInsertOneToEachStation = 0;
+	static int orderInsertOneToEachStation = 1;
 	static int orderInsertOneToAllStations = 1;
 
 	// HERE YOU MUST INDICATE 1-YES OR 0-NO TO SEND DEVICE TESTS
-
 	static int orderInsertAFrameAllGeocodes = 0;
 	static int orderInsertPblAllGeocodes = 0;
 	static int orderInsertPdcAllGeocodes = 0;
@@ -137,6 +137,9 @@ public class RunSenderOrderInsert {
 			OrderInsertWritterGeocodes.main(deviceType, folderName, wamasHostIpRequested, 8500000, "8500000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
+		
 		/////////////////////////////////////////////////////////////////////////
+		
+		CSVUtils.deleteAllFolders();
 	}
 }
