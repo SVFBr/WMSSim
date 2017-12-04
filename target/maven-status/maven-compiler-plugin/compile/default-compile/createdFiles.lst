@@ -1,8 +1,6 @@
-com\ssi\schaefer\yanbal\order\insert\msgwritter\OrderInsertWritterGenericGeoTests.class
 com\ssi\schaefer\yanbal\util\dbutils\DatabaseQueries.class
 com\ssi\schaefer\errors\errorgenerator\GenerateFieldErrors$1.class
 com\ssi\schaefer\yanbal\article\insert\msgwritter\ArticleInsertWritter.class
-com\ssi\schaefer\yanbal\order\insert\WebSenderOrderInsertGeoTests.class
 com\ssi\schaefer\yanbal\util\dbutils\SendByConn.class
 com\ssi\schaefer\yanbal\order\insert\msgwritter\OrderInsertWritterPrize.class
 com\ssi\schaefer\yanbal\util\tools\CSVUtils.class
@@ -13,7 +11,6 @@ com\ssi\schaefer\yanbal\util\tools\Tools.class
 com\ssi\schaefer\yanbal\barcode\insert\WebSenderBarcodeInsert.class
 com\ssi\schaefer\errors\FieldTest.class
 com\ssi\schaefer\yanbal\barcode\insert\msgwritter\BarcodeInsertWritter.class
-com\ssi\schaefer\yanbal\order\insert\msgwritter\OrderInsertWritterGeneric.class
 com\ssi\schaefer\yanbal\util\conn\FTPUtil.class
 com\ssi\schaefer\entities\Field.class
 com\ssi\schaefer\yanbal\util\dbutils\QueriesLauncher.class
@@ -21,7 +18,6 @@ com\ssi\schaefer\CreateDatFileApplication.class
 com\ssi\schaefer\yanbal\location\insert\msgwritter\LocationInsertWritter.class
 com\ssi\schaefer\yanbal\barcode\insert\RunSenderBarcodeInsert.class
 com\ssi\schaefer\entities\DatModel.class
-com\ssi\schaefer\yanbal\order\insert\RunSenderOrderInsertGeoTests.class
 com\ssi\schaefer\yanbal\location\insert\WebSenderLocationInsert.class
 com\ssi\schaefer\yanbal\order\insert\WebSenderOrderInsert.class
 com\ssi\schaefer\yanbal\location\insert\RunSenderLocationInsert.class
