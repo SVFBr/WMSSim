@@ -19,8 +19,8 @@ public class RunSenderOrderInsert {
 	 **/
 	// *******************************************************************
 
-	 static String wamasHostIpRequested = "192.168.173.222";
-//	static String wamasHostIpRequested = "10.34.234.2";
+//	 static String wamasHostIpRequested = "192.168.173.222";
+	static String wamasHostIpRequested = "10.34.234.2";
 
 	static String[] arrDevice = { "AFR", "PBLUP", "PBLDOWN", "PBLMIX", "BAJ", "PRIZE", "MIX" };
 	static String[] arrDeviceII = { "OneToEachStation", "OneToAllStations", "AF", "P", "BAJ" };
