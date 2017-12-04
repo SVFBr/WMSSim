@@ -33,7 +33,7 @@ public class OrderInsertWritterOneToAllStations {
 	public static void main(String deviceType, int numberOfArticles, String folderName, String wamasHostIpRequested, int incrementPageNumber, String orderCodeSetter) throws ClassNotFoundException, SQLException, IOException {
 
 		String[] arrEachStation = { "AFP01", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "PDC" };
-		
+
 		CSVUtils.genPath(folderName);
 		CSVUtils.checkIfFileExistAt(folderName);
 		files = numberOfArticles;

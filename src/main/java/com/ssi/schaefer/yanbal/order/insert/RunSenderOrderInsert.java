@@ -19,12 +19,14 @@ public class RunSenderOrderInsert {
 	 **/
 	// *******************************************************************
 
-	static String wamasHostIpRequested = "192.168.173.222";
-	// static String wamasHostIpRequested = "10.34.234.2";
-
-	// HERE YOU MUST INDICATE HOW MANY ORDERS SHOULD BE SEND TO HOST
+//	static String wamasHostIpRequested = "192.168.173.222";
+	 static String wamasHostIpRequested = "10.34.234.2";
 
 	static String[] arrDevice = { "AFR", "PBLUP", "PBLDOWN", "PBLMIX", "BAJ", "PRIZE", "MIX" };
+	static String[] arrDeviceII = { "OneToEachStation", "OneToAllStations", "AF", "P", "BAJ" };
+
+	// HERE YOU MUST INDICATE HOW MANY ORDERS SHOULD BE SEND TO HOST
+	
 	static int orderInsertAframe = 0;
 	static int orderInsertPblUp = 0;
 	static int orderInsertPblDown = 0;
@@ -33,11 +35,11 @@ public class RunSenderOrderInsert {
 	static int orderInsertPrize = 0;
 	static int orderInsertMix = 0;
 
-	// HERE YOU MUST INDICATE 1-YES OR 0-NO TO SEND DEVICE TESTS
-
-	static String[] arrDeviceII = { "OneToEachStation", "OneToAllStations", "AF", "P", "BAJ" };
 	static int orderInsertOneToEachStation = 0;
-	static int orderInsertOneToAllStations = 2;
+	static int orderInsertOneToAllStations = 0;
+
+	// HERE YOU MUST INDICATE 1-YES OR 0-NO TO SEND DEVICE TESTS
+	
 	static int orderInsertAFrameAllGeocodes = 0;
 	static int orderInsertPblAllGeocodes = 0;
 	static int orderInsertPdcAllGeocodes = 0;

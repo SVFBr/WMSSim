@@ -18,8 +18,7 @@ public class OrderInsertWritterGeocodes {
 
 	/**
 	 * 
-	 * WRITTER for ORDER INSERT [GEOTESTES]
-	 * 
+	 * WRITTER for ORDER INSERT [GEOTESTES] [ONE ORDER TO EACH GEOCODE DEVICE]
 	 */
 
 	static String mapMaxOrderCodeSql;
