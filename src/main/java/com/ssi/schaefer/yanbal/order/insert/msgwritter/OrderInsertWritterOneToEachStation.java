@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -18,8 +19,7 @@ public class OrderInsertWritterOneToEachStation {
 
 	/**
 	 * 
-	 * WRITTER for ORDER INSERT [GEOTESTES] FOR EACH STATION
-	 * One order to every station
+	 * WRITTER for ORDER INSERT [ONE ORDER TO EACH STATION]
 	 * 
 	 */
 
@@ -27,48 +27,51 @@ public class OrderInsertWritterOneToEachStation {
 	static String mapSql;
 	static int files;
 	static String orderCode;
+	static List<HashMap<String, String>> mapMaxOrderCode;
+	static List<HashMap<String, String>> map;
 
 	public static void main(String deviceType, int numberOfArticles, String folderName, String wamasHostIpRequested, int incrementPageNumber, String orderCodeSetter) throws ClassNotFoundException, SQLException, IOException {
 
 		CSVUtils.genPath(folderName);
 		CSVUtils.checkIfFileExistAt(folderName);
+		files = numberOfArticles;
+
+		mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '270%'";
+		mapMaxOrderCode = DatabaseQueries.executeQuery(mapMaxOrderCodeSql, wamasHostIpRequested);
+
+		// ORDER NUMBER LAUNCHER
+		String newMapMaxOrderCode = mapMaxOrderCode.toString().replaceAll("[^0-9]", "");
+		if (newMapMaxOrderCode.isEmpty()) {
+			orderCode = orderCodeSetter;
+		} else {
+			orderCode = newMapMaxOrderCode;
+			if (Integer.parseInt(orderCode) < Integer.parseInt(orderCodeSetter)) {
+				orderCode = orderCodeSetter;
+			}
+		}
+		Integer orderNumber = Integer.parseInt(orderCode);
 
 		String[] arrEachStation = { "AFP01", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16", "P17", "P18", "P19", "PDC" };
-		// --------------------------------------------------------------------
-		// GEOTESTS [CONTROLLER] FOR EACH STATION
-		// --------------------------------------------------------------------
 
-		String ocs = StringUtils.left(orderCodeSetter, 3);
+		for (int i = 0; i < arrEachStation.length; i++) {
 
-			for (int i = 0; i < arrEachStation.length; i++) {
-				
-			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '" + ocs + "%'";
 			mapSql = "SELECT SKU.SKU_CODE, L.GEOCODE, L.GEOCODE_DEVICE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE_DEVICE LIKE '" + arrEachStation[i] + "%'";
-			List<HashMap<String, String>> mapMaxOrderCode = DatabaseQueries.executeQuery(mapMaxOrderCodeSql, wamasHostIpRequested);
-			List<HashMap<String, String>> map = DatabaseQueries.executeQuery(mapSql, wamasHostIpRequested);
+			map = DatabaseQueries.executeQuery(mapSql, wamasHostIpRequested);
 
 			if (map.size() > 0) {
-				
-				for (int fl = 1; fl <= 1; fl++) {
-				// ORDER NUMBER LAUNCHER
-				String newMapMaxOrderCode = mapMaxOrderCode.toString().replaceAll("[^0-9]", "");
-				if (newMapMaxOrderCode.isEmpty()) {
-					orderCode = orderCodeSetter;
-				} else {
-					orderCode = newMapMaxOrderCode;
-					if (Integer.parseInt(orderCode) < Integer.parseInt(orderCodeSetter)) {
-						orderCode = orderCodeSetter;
-					}
-				}
-				Integer orderNumber = Integer.parseInt(orderCode);
+
+				Random hasMorePages = new Random();
+
+				// FILES
+				for (int fl = 1; fl <= files; fl++) {
 					// ORDER_CODE
 					orderNumber++;
-					System.out.print("\n" + arrEachStation[i].toString() + " OR.............: ");
-					String orNum = Integer.toString(incrementPageNumber);
+					System.out.print("\n" + deviceType + " OR.............: ");
+					String orNum = Integer.toString(orderNumber);
 					System.out.print(StringUtils.leftPad(orNum, 7, "0"));
 					System.out.print("\n");
 					for (int or = 1; or <= 1; or++) {
-						// JUST LINES
+						// LINES
 						File pathOnePage = CSVUtils.genPath(folderName);
 						String csvFileOnePAge = pathOnePage + "/" + String.format("%07d", incrementPageNumber++) + ".dat";
 						FileWriter writerOnePAge = new FileWriter(csvFileOnePAge);
@@ -86,7 +89,7 @@ public class OrderInsertWritterOneToEachStation {
 					}
 				}
 			} else {
-				System.out.println("\n ES: Table SKU_LOCATION_MAP was not filled out for: " + arrEachStation[i].toString() + "\n");
+				System.out.println("\n Table SKU_LOCATION_MAP was not filled out for: " + deviceType + "\n");
 			}
 		}
 	}

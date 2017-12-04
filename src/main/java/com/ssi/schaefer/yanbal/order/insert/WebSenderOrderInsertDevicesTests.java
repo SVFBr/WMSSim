@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import com.ssi.schaefer.yanbal.order.insert.msgwritter.OrderInsertWritter;
-import com.ssi.schaefer.yanbal.order.insert.msgwritter.OrderInsertWritterGeoTests;
+import com.ssi.schaefer.yanbal.order.insert.msgwritter.OrderInsertWritterGeocodes;
 import com.ssi.schaefer.yanbal.order.insert.msgwritter.OrderInsertWritterPrize;
 import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
 
-public class WebSenderOrderInsertGeoTests {
+public class WebSenderOrderInsertDevicesTests {
 
 	//*******************************************************************
 	/**    				 				     ORDER INSERT BY WEB GEOTESTS 						 
@@ -29,7 +29,7 @@ public class WebSenderOrderInsertGeoTests {
 			String deviceType = arrDevice[0];
 			int numberOfArticles = orderInsertAframeGeoTests;
 			String folderName = "/orderInsertAFRg";
-			OrderInsertWritterGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2700000, "2700000");
+			OrderInsertWritterGeocodes.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2700000, "2700000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		
@@ -37,7 +37,7 @@ public class WebSenderOrderInsertGeoTests {
 			String deviceType = arrDevice[1];
 			int numberOfArticles = orderInsertPblGeoTests;
 			String folderName = "/orderInsertPBLg";
-			OrderInsertWritterGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2800000, "2800000");
+			OrderInsertWritterGeocodes.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2800000, "2800000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		
@@ -45,7 +45,7 @@ public class WebSenderOrderInsertGeoTests {
 			String deviceType = arrDevice[2];
 			int numberOfArticles = orderInsertPdcGeoTests;
 			String folderName = "/orderInsertBAJg";
-			OrderInsertWritterGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2900000, "2900000");
+			OrderInsertWritterGeocodes.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2900000, "2900000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		
@@ -53,7 +53,7 @@ public class WebSenderOrderInsertGeoTests {
 			String deviceType = arrDevice[3];
 			int numberOfArticles = orderInsertEachStation;
 			String folderName = "/orderInsertEACHSTATIONg";
-			OrderInsertWritterGeoTests.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 3000000, "3000000");
+			OrderInsertWritterGeocodes.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 3000000, "3000000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 

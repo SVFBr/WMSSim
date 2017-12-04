@@ -14,7 +14,7 @@ import com.ssi.schaefer.yanbal.util.dbutils.DatabaseQueries;
 import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 import com.ssi.schaefer.yanbal.util.tools.Tools;
 
-public class OrderInsertWritterGeoTests {
+public class OrderInsertWritterGeocodes {
 
 	/**
 	 * 
@@ -35,12 +35,8 @@ public class OrderInsertWritterGeoTests {
 
 		String ocs = StringUtils.left(orderCodeSetter, 3);
 
-		if (deviceType == "EACH_STATIONS") {
-			OrderInsertWritterOneToEachStation.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, incrementPageNumber, orderCodeSetter);
-		} 
-			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '" + ocs + "%'";
-			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE LIKE '" + deviceType + "%' ORDER BY SKU_CODE";
-		
+		mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '" + ocs + "%'";
+		mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE LIKE '" + deviceType + "%' ORDER BY SKU_CODE";
 
 		List<HashMap<String, String>> mapMaxOrderCode = DatabaseQueries.executeQuery(mapMaxOrderCodeSql, wamasHostIpRequested);
 		List<HashMap<String, String>> map = DatabaseQueries.executeQuery(mapSql, wamasHostIpRequested);
@@ -84,7 +80,7 @@ public class OrderInsertWritterGeoTests {
 					CSVUtils.writeLine(writerOnePAge, Arrays.asList(" <station station_id=\"POPXL\"/>"));
 					CSVUtils.writeLine(writerOnePAge, Arrays.asList(" <station station_id=\"SHL0" + Tools.getRandRotate(1, 8) + "\"/>"));
 					for (int li = 1; li <= 1; li++) {
-						System.out.println("    li: " + li);
+						System.out.println("    [SKU: " + map.get(i).get("SKU_CODE") + "] [GEOCODE: " + map.get(i).get("GEOCODE") + "]");
 						CSVUtils.writeLine(writerOnePAge, Arrays.asList("	<line article_id=\"" + map.get(i++).get("SKU_CODE") + "\"" + " ordered_packunits=\"" + Tools.getRandRotate(1, 7) + "\" packunit_size=\"1\" host_line_id=\"" + li + "\"/>"));
 					}
 					CSVUtils.writeLine(writerOnePAge, Arrays.asList("</order_insert>"));

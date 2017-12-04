@@ -13,7 +13,7 @@ import com.ssi.schaefer.yanbal.article.insert.WebSenderArticleInsert;
 import com.ssi.schaefer.yanbal.barcode.insert.WebSenderBarcodeInsert;
 import com.ssi.schaefer.yanbal.location.insert.WebSenderLocationInsert;
 import com.ssi.schaefer.yanbal.order.insert.WebSenderOrderInsert;
-import com.ssi.schaefer.yanbal.order.insert.WebSenderOrderInsertGeoTests;
+import com.ssi.schaefer.yanbal.order.insert.WebSenderOrderInsertDevicesTests;
 
 @Controller
 public class GenerateController {
@@ -76,7 +76,7 @@ public class GenerateController {
 	
 	@PostMapping("/yanbog/geo")
 	public String gerarGeo(int orderInsertAframeGeoTests, int orderInsertPblGeoTests, int orderInsertPdcGeoTests, int orderInsertEachStation, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
-		WebSenderOrderInsertGeoTests webSenderOrderInsertGeoTests = new WebSenderOrderInsertGeoTests();
+		WebSenderOrderInsertDevicesTests webSenderOrderInsertGeoTests = new WebSenderOrderInsertDevicesTests();
 		webSenderOrderInsertGeoTests.createArticleInsert(orderInsertAframeGeoTests, orderInsertPblGeoTests, orderInsertPdcGeoTests, orderInsertEachStation, wamasHostIpRequested);
 		return "redirect:/yanbog/geo";
 	}
