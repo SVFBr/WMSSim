@@ -14,8 +14,8 @@ public class RunSenderOrderInsert {
 
 	// *******************************************************************
 	/**
-	 * ORDER INSERT BY FTP . .-""`""-. |(@ @) _/`oOoOoOoOo`\_ \ \-/
-	 * '.-=-=-=-=-=-=-.' \/ \ `-=.=-.-=.=-' \ /\ ^ ^ ^ _H_ \
+	 * ORDER INSERT BY FTP 
+	 *
 	 **/
 	// *******************************************************************
 
@@ -35,9 +35,9 @@ public class RunSenderOrderInsert {
 
 	// HERE YOU MUST INDICATE 1-YES OR 0-NO TO SEND DEVICE TESTS
 
-	static String[] arrDeviceII = { "OTE", "OTA", "AF", "P", "BAJ" };
-	static int orderInsertOneToEachStation = 2;
-	static int orderInsertOneToAllStations = 0;
+	static String[] arrDeviceII = { "OneToEachStation", "OneToAllStations", "AF", "P", "BAJ" };
+	static int orderInsertOneToEachStation = 0;
+	static int orderInsertOneToAllStations = 2;
 	static int orderInsertAFrameAllGeocodes = 0;
 	static int orderInsertPblAllGeocodes = 0;
 	static int orderInsertPdcAllGeocodes = 0;
@@ -111,7 +111,7 @@ public class RunSenderOrderInsert {
 			int numberOfArticles = orderInsertOneToAllStations;
 			String folderName = "/orderInsertOneToAllStations";
 			OrderInsertWritterOneToAllStations.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2800000, "2800000");
-			// SendByFTP.main(folderName, wamasHostIpRequested);
+			 SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
 		if (orderInsertAFrameAllGeocodes > 0) {

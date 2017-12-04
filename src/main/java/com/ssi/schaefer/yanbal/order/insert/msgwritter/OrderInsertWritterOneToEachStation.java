@@ -19,7 +19,8 @@ public class OrderInsertWritterOneToEachStation {
 
 	/**
 	 * 
-	 * WRITTER for ORDER INSERT [ONE ORDER TO EACH STATION]
+	 * WRITTER for ORDER INSERT
+	 * 		[ONE (OU MORE) ORDER TO EACH STATION]
 	 * 
 	 */
 
