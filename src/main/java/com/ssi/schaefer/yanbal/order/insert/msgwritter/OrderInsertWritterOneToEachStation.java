@@ -37,7 +37,7 @@ public class OrderInsertWritterOneToEachStation {
 		CSVUtils.checkIfFileExistAt(folderName);
 		files = numberOfArticles;
 
-		mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '270%'";
+		mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '810%'";
 		mapMaxOrderCode = DatabaseQueries.executeQuery(mapMaxOrderCodeSql, wamasHostIpRequested);
 
 		// ORDER NUMBER LAUNCHER

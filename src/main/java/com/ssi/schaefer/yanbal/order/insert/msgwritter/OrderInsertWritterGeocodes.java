@@ -27,7 +27,7 @@ public class OrderInsertWritterGeocodes {
 	static int files;
 	static String orderCode;
 
-	public static void main(String deviceType, int numberOfArticles, String folderName, String wamasHostIpRequested, int incrementPageNumber, String orderCodeSetter) throws ClassNotFoundException, SQLException, IOException {
+	public static void main(String deviceType, String folderName, String wamasHostIpRequested, int incrementPageNumber, String orderCodeSetter) throws ClassNotFoundException, SQLException, IOException {
 
 		// --------------------------------------------------------------------
 		// GEOTESTS [CONTROLLER]

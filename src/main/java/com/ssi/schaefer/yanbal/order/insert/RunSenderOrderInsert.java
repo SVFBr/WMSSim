@@ -14,7 +14,7 @@ public class RunSenderOrderInsert {
 
 	// *******************************************************************
 	/**
-	 * ORDER INSERT BY FTP 
+	 * ORDER INSERT BY FTP
 	 *
 	 **/
 	// *******************************************************************
@@ -46,6 +46,7 @@ public class RunSenderOrderInsert {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
 
+		///////////////////////////////////////////////////////////////////////// arrDevice
 		if (orderInsertAframe > 0) {
 			String deviceType = arrDevice[0];
 			int numberOfArticles = orderInsertAframe;
@@ -96,13 +97,13 @@ public class RunSenderOrderInsert {
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////////////////// arrDeviceII
 
 		if (orderInsertOneToEachStation > 0) {
 			String deviceType = arrDeviceII[0];
 			int numberOfArticles = orderInsertOneToEachStation;
 			String folderName = "/orderInsertOneToEachStation";
-			OrderInsertWritterOneToEachStation.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2700000, "2700000");
+			OrderInsertWritterOneToEachStation.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 8100000, "8100000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
@@ -110,33 +111,30 @@ public class RunSenderOrderInsert {
 			String deviceType = arrDeviceII[1];
 			int numberOfArticles = orderInsertOneToAllStations;
 			String folderName = "/orderInsertOneToAllStations";
-			OrderInsertWritterOneToAllStations.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2800000, "2800000");
-			 SendByFTP.main(folderName, wamasHostIpRequested);
+			OrderInsertWritterOneToAllStations.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 8200000, "8200000");
+			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
 		if (orderInsertAFrameAllGeocodes > 0) {
 			String deviceType = arrDeviceII[2];
-			int numberOfArticles = orderInsertAFrameAllGeocodes;
 			String folderName = "/orderInsertAFrameAllGeocodes";
-			OrderInsertWritterGeocodes.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 2900000, "2900000");
+			OrderInsertWritterGeocodes.main(deviceType, folderName, wamasHostIpRequested, 8300000, "8300000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
 		if (orderInsertPblAllGeocodes > 0) {
 			String deviceType = arrDeviceII[3];
-			int numberOfArticles = orderInsertPblAllGeocodes;
 			String folderName = "/orderInsertPblAllGeocodes";
-			OrderInsertWritterGeocodes.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 3000000, "3000000");
+			OrderInsertWritterGeocodes.main(deviceType, folderName, wamasHostIpRequested, 8400000, "8400000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
 		if (orderInsertPdcAllGeocodes > 0) {
 			String deviceType = arrDeviceII[4];
-			int numberOfArticles = orderInsertPdcAllGeocodes;
 			String folderName = "/orderInsertPdcAllGeocodes";
-			OrderInsertWritterGeocodes.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 3100000, "3100000");
+			OrderInsertWritterGeocodes.main(deviceType, folderName, wamasHostIpRequested, 8500000, "8500000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
-
+		/////////////////////////////////////////////////////////////////////////
 	}
 }
