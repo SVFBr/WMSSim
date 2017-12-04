@@ -151,39 +151,46 @@ public class DatModel implements Serializable {
 	 */
 
 	@Transient
-	private String orderInsertAframeGeoTests, orderInsertPblGeoTests, orderInsertPdcGeoTests, orderInsertEachStation;
+	private String orderInsertOneToEachStation, orderInsertOneToAllStations, orderInsertAFrameAllGeocodes, orderInsertPblAllGeocodes, orderInsertPdcAllGeocodes;
 
-	public String getOrderInsertAframeGeoTests() {
-		return orderInsertAframeGeoTests;
+	public String getOrderInsertOneToEachStation() {
+		return orderInsertOneToEachStation;
 	}
 
-	public void setOrderInsertAframeGeoTests(String orderInsertAframeGeoTests) {
-		this.orderInsertAframeGeoTests = orderInsertAframeGeoTests;
+	public void setOrderInsertOneToEachStation(String orderInsertOneToEachStation) {
+		this.orderInsertOneToEachStation = orderInsertOneToEachStation;
 	}
 
-	public String getOrderInsertPblGeoTests() {
-		return orderInsertPblGeoTests;
+	public String getOrderInsertOneToAllStations() {
+		return orderInsertOneToAllStations;
 	}
 
-	public String getOrderInsertEachStation() {
-		return orderInsertEachStation;
+	public void setOrderInsertOneToAllStations(String orderInsertOneToAllStations) {
+		this.orderInsertOneToAllStations = orderInsertOneToAllStations;
 	}
 
-	public void setOrderInsertEachStation(String orderInsertEachStation) {
-		this.orderInsertEachStation = orderInsertEachStation;
+	public String getOrderInsertAFrameAllGeocodes() {
+		return orderInsertAFrameAllGeocodes;
 	}
 
-	public void setOrderInsertPblGeoTests(String orderInsertPblGeoTests) {
-		this.orderInsertPblGeoTests = orderInsertPblGeoTests;
+	public void setOrderInsertAFrameAllGeocodes(String orderInsertAFrameAllGeocodes) {
+		this.orderInsertAFrameAllGeocodes = orderInsertAFrameAllGeocodes;
 	}
 
-	public String getOrderInsertPdcGeoTests() {
-		return orderInsertPdcGeoTests;
+	public String getOrderInsertPblAllGeocodes() {
+		return orderInsertPblAllGeocodes;
 	}
 
-	public void setOrderInsertPdcGeoTests(String orderInsertPdcGeoTests) {
-		this.orderInsertPdcGeoTests = orderInsertPdcGeoTests;
+	public void setOrderInsertPblAllGeocodes(String orderInsertPblAllGeocodes) {
+		this.orderInsertPblAllGeocodes = orderInsertPblAllGeocodes;
 	}
 
-	
+	public String getOrderInsertPdcAllGeocodes() {
+		return orderInsertPdcAllGeocodes;
+	}
+
+	public void setOrderInsertPdcAllGeocodes(String orderInsertPdcAllGeocodes) {
+		this.orderInsertPdcAllGeocodes = orderInsertPdcAllGeocodes;
+	}
+
 }

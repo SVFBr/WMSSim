@@ -10,7 +10,7 @@ import org.apache.commons.io.FileUtils;
 public class CSVUtils {
 
 	private static final char DEFAULT_SEPARATOR = ' ';
-	private static String localDirPath = "e:/_ToFTP";
+	private static String localDirPath = "e:/_WMSSim";
 
 	public static void writeLine(Writer w, List<String> values) throws IOException {
 		writeLine(w, values, DEFAULT_SEPARATOR, ' ');

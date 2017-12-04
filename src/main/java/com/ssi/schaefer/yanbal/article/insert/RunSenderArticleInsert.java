@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import com.ssi.schaefer.yanbal.article.insert.msgwritter.ArticleInsertWritter;
 import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
+import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 
 public class RunSenderArticleInsert {
 
@@ -41,7 +42,7 @@ public class RunSenderArticleInsert {
 			int numberOfArticles = articleInsertAFrame;
 			String folderName = "/articleInsertAFR";
 			ArticleInsertWritter.main(folderName, deviceType, wamasHostIpRequested, numberOfArticles);
-			SendByFTP.main(folderName, wamasHostIpRequested);
+			//SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
 		if (articleInsertPbl > 0) {
@@ -49,7 +50,7 @@ public class RunSenderArticleInsert {
 			int numberOfArticles = articleInsertPbl;
 			String folderName = "/articleInsertPBL";
 			ArticleInsertWritter.main(folderName, deviceType, wamasHostIpRequested, numberOfArticles);
-			SendByFTP.main(folderName, wamasHostIpRequested);
+		//	SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
 		if (articleInsertPdc > 0) {
@@ -57,8 +58,9 @@ public class RunSenderArticleInsert {
 			int numberOfArticles = articleInsertPdc;
 			String folderName = "/articleInsertBAJ";
 			ArticleInsertWritter.main(folderName, deviceType, wamasHostIpRequested, numberOfArticles);
-			SendByFTP.main(folderName, wamasHostIpRequested);
+	//		SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
+		CSVUtils.deleteAllFolders();
 	}
 }

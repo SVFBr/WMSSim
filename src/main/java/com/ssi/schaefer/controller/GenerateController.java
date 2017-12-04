@@ -30,7 +30,7 @@ public class GenerateController {
 	@PostMapping("/yanbog/articles")
 	public String gerarArticle(int articleInsertAFrame, int articleInsertPbl, int articleInsertPdc, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
 		WebSenderArticleInsert webSenderArticleInsert = new WebSenderArticleInsert();
-		webSenderArticleInsert.createArticleInsert(articleInsertAFrame, articleInsertPbl, articleInsertPdc, wamasHostIpRequested);
+		webSenderArticleInsert.createInsert(articleInsertAFrame, articleInsertPbl, articleInsertPdc, wamasHostIpRequested);
 		return "redirect:/yanbog/articles";
 	}
 
@@ -46,7 +46,7 @@ public class GenerateController {
 	@PostMapping("/yanbog/barcodes")
 	public String gerarBarcode(String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
 		WebSenderBarcodeInsert webSenderBarcodeInsert = new WebSenderBarcodeInsert();
-		webSenderBarcodeInsert.createBarcodeInsert(wamasHostIpRequested);
+		webSenderBarcodeInsert.createInsert(wamasHostIpRequested);
 		return "redirect:/yanbog/barcodes";
 	}
 
@@ -62,7 +62,7 @@ public class GenerateController {
 	@PostMapping("/yanbog/locations")
 	public String gerarLocations(String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
 		WebSenderLocationInsert webSenderLocationInsert = new WebSenderLocationInsert();
-		webSenderLocationInsert.createBarcodeInsert(wamasHostIpRequested);
+		webSenderLocationInsert.createInsert(wamasHostIpRequested);
 		return "redirect:/yanbog/locations";
 	}
 	// --------------------------------------------------------------------
@@ -75,9 +75,9 @@ public class GenerateController {
 	}
 	
 	@PostMapping("/yanbog/geo")
-	public String gerarGeo(int orderInsertAframeGeoTests, int orderInsertPblGeoTests, int orderInsertPdcGeoTests, int orderInsertEachStation, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
-		WebSenderOrderInsertDevicesTests webSenderOrderInsertGeoTests = new WebSenderOrderInsertDevicesTests();
-		webSenderOrderInsertGeoTests.createArticleInsert(orderInsertAframeGeoTests, orderInsertPblGeoTests, orderInsertPdcGeoTests, orderInsertEachStation, wamasHostIpRequested);
+	public String gerarGeo(int orderInsertOneToEachStation, int orderInsertOneToAllStations, int orderInsertAFrameAllGeocodes, int orderInsertPblAllGeocodes, int orderInsertPdcAllGeocodes, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
+		WebSenderOrderInsertDevicesTests webSenderOrderInsertDevicesTests = new WebSenderOrderInsertDevicesTests();
+		webSenderOrderInsertDevicesTests.createInsert(orderInsertOneToEachStation, orderInsertOneToAllStations, orderInsertAFrameAllGeocodes, orderInsertPblAllGeocodes, orderInsertPdcAllGeocodes, wamasHostIpRequested);
 		return "redirect:/yanbog/geo";
 	}
 
@@ -93,7 +93,7 @@ public class GenerateController {
 	@PostMapping("/yanbog")
 	public String gerarOrders(int orderInsertAframe, int orderInsertPblUp, int orderInsertPblDown, int orderInsertPblMixed, int orderInsertPdc, int orderInsertPrize, int orderInsertMix, String wamasHostIpRequested) throws IOException, ClassNotFoundException, SQLException {
 		WebSenderOrderInsert webSenderOrderInsert = new WebSenderOrderInsert();
-		webSenderOrderInsert.createArticleInsert(orderInsertAframe, orderInsertPblUp, orderInsertPblDown, orderInsertPblMixed, orderInsertPdc, orderInsertPrize, orderInsertMix, wamasHostIpRequested);
+		webSenderOrderInsert.createInsert(orderInsertAframe, orderInsertPblUp, orderInsertPblDown, orderInsertPblMixed, orderInsertPdc, orderInsertPrize, orderInsertMix, wamasHostIpRequested);
 		return "redirect:/yanbog";
 	}
 

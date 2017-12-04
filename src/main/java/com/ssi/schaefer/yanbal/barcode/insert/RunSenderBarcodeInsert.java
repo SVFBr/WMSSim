@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import com.ssi.schaefer.yanbal.barcode.insert.msgwritter.BarcodeInsertWritter;
 import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
+import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 
 public class RunSenderBarcodeInsert {
 
@@ -32,5 +33,7 @@ public class RunSenderBarcodeInsert {
 
 		BarcodeInsertWritter.main("/barcodeInserBAJ", "BAJ", wamasHostIpRequested);
 		SendByFTP.main("/barcodeInsertBAJ", wamasHostIpRequested);
+		
+		CSVUtils.deleteAllFolders();
 	}
 }

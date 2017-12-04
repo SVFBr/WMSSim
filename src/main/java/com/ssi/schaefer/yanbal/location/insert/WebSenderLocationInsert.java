@@ -31,7 +31,7 @@ public class WebSenderLocationInsert {
 	 **/
 	//*******************************************************************
 
-	public void createBarcodeInsert(String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
+	public void createInsert(String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
 		LocationInsertWritter.main("/locationInsertAf", "AFF", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertAFR", wamasHostIpRequested);
@@ -41,5 +41,7 @@ public class WebSenderLocationInsert {
 
 		LocationInsertWritter.main("/locationInsertPd", "BAJ", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertBAJ", wamasHostIpRequested);
+		
+		CSVUtils.deleteAllFolders();
 	}
 }

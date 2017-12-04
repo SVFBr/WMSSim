@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import com.ssi.schaefer.yanbal.order.insert.msgwritter.OrderInsertWritter;
 import com.ssi.schaefer.yanbal.order.insert.msgwritter.OrderInsertWritterPrize;
 import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
+import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 
 public class WebSenderOrderInsert {
 
@@ -22,7 +23,7 @@ public class WebSenderOrderInsert {
 
 	static String[] arrDevice = { "AFR", "PBLUP", "PBLDOWN", "PBLMIX", "BAJ", "PRIZE", "MIX", };
 
-	public void createArticleInsert(int orderInsertAframe, int orderInsertPblUp, int orderInsertPblDown, int orderInsertPblMixed, int orderInsertPdc, int orderInsertPrize, int orderInsertMix, String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
+	public void createInsert(int orderInsertAframe, int orderInsertPblUp, int orderInsertPblDown, int orderInsertPblMixed, int orderInsertPdc, int orderInsertPrize, int orderInsertMix, String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
 		if (orderInsertAframe > 0) {
 			String deviceType = arrDevice[0];
@@ -74,5 +75,6 @@ public class WebSenderOrderInsert {
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 
+		CSVUtils.deleteAllFolders();
 	}
 }

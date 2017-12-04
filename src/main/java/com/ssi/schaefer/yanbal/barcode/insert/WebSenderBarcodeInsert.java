@@ -30,7 +30,7 @@ public class WebSenderBarcodeInsert {
 	 **/
 	//*******************************************************************
 
-	public void createBarcodeInsert(String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
+	public void createInsert(String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
 		BarcodeInsertWritter.main("/barcodeInsertAFR", "AFR", wamasHostIpRequested);
 		SendByFTP.main("/barcodeInsertAFR", wamasHostIpRequested);
@@ -40,5 +40,7 @@ public class WebSenderBarcodeInsert {
 
 		BarcodeInsertWritter.main("/barcodeInserBAJ", "BAJ", wamasHostIpRequested);
 		SendByFTP.main("/barcodeInsertBAJ", wamasHostIpRequested);
+		
+		CSVUtils.deleteAllFolders();
 	}
 }

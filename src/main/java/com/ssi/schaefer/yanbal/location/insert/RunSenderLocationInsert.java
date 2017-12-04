@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import com.ssi.schaefer.yanbal.location.insert.msgwritter.LocationInsertWritter;
 import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
+import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 
 public class RunSenderLocationInsert {
 
@@ -32,6 +33,8 @@ public class RunSenderLocationInsert {
 
 		LocationInsertWritter.main("/locationInsertPDC", "BAJ", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertBAJ", wamasHostIpRequested);
+		
+		CSVUtils.deleteAllFolders();
 
 	}
 }

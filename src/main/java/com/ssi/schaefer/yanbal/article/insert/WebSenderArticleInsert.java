@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import com.ssi.schaefer.yanbal.article.insert.msgwritter.ArticleInsertWritter;
 import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
+import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 
 public class WebSenderArticleInsert {
 
@@ -25,7 +26,7 @@ public class WebSenderArticleInsert {
 
 	static String[] arrDevice = { "AFR", "PBL", "BAJ" };
 
-	public void createArticleInsert(int articleInsertAFrame, int articleInsertPbl, int articleInsertPdc,
+	public void createInsert(int articleInsertAFrame, int articleInsertPbl, int articleInsertPdc,
 			String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
 		if (articleInsertAFrame > 0) {
@@ -50,5 +51,7 @@ public class WebSenderArticleInsert {
 			ArticleInsertWritter.main(folderName, deviceType, wamasHostIpRequested, numberOfArticles);
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
+		
+		CSVUtils.deleteAllFolders();
 	}
 }
