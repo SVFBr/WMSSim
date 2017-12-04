@@ -14,7 +14,7 @@ import com.ssi.schaefer.yanbal.util.dbutils.DatabaseQueries;
 import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 import com.ssi.schaefer.yanbal.util.tools.Tools;
 
-public class OrderInsertWritterGenericGeoTestsEachStation {
+public class OrderInsertWritterOneToEachStation {
 
 	/**
 	 * 

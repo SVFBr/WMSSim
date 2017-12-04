@@ -14,7 +14,7 @@ import com.ssi.schaefer.yanbal.util.dbutils.DatabaseQueries;
 import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 import com.ssi.schaefer.yanbal.util.tools.Tools;
 
-public class OrderInsertWritterGenericGeoTests {
+public class OrderInsertWritterGeoTests {
 
 	/**
 	 * 
@@ -36,7 +36,7 @@ public class OrderInsertWritterGenericGeoTests {
 		String ocs = StringUtils.left(orderCodeSetter, 3);
 
 		if (deviceType == "EACH_STATIONS") {
-			OrderInsertWritterGenericGeoTestsEachStation.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, incrementPageNumber, orderCodeSetter);
+			OrderInsertWritterOneToEachStation.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, incrementPageNumber, orderCodeSetter);
 		} 
 			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '" + ocs + "%'";
 			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE LIKE '" + deviceType + "%' ORDER BY SKU_CODE";
