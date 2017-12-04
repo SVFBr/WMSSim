@@ -60,8 +60,6 @@ public class OrderInsertWritterOneToEachStation {
 
 			if (map.size() > 0) {
 
-				Random hasMorePages = new Random();
-
 				// FILES
 				for (int fl = 1; fl <= files; fl++) {
 					// ORDER_CODE
