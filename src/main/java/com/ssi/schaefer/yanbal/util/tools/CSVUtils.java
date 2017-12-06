@@ -84,7 +84,7 @@ public class CSVUtils {
 
 	public static void deleteAllFolders() throws IOException {
 		FileUtils.deleteDirectory(new File(localDirPath));
-		System.out.println("\n[MESSAGE(S) were sended to host and deleted from WMSSim...] \n");
+		System.out.println("\n[THE END...] \n");
 	}
 
 }
