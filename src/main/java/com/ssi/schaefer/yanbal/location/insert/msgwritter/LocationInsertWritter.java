@@ -42,7 +42,7 @@ public class LocationInsertWritter {
 		List<HashMap<String, String>> mapLocation = DatabaseQueries.executeQuery(mapLocationSql, wamasHostIpRequested);
 		List<HashMap<String, String>> mapSkuCode = DatabaseQueries.executeQuery(mapSkuCodeSql, wamasHostIpRequested);
 
-		System.out.println(mapLocation.size() + " " + deviceType + " geocode free ");
+		System.out.println(mapLocation.size() + " " + deviceType + "'s geocode free ");
 		System.out.println(mapSkuCode.size() + " SKUs without geocode " + deviceType + "\n");
 
 		if (mapLocation.size() > 0) {
