@@ -31,9 +31,9 @@ public class RunSenderArticleInsert {
 
 	static String[] arrDevice = { "AFR", "PBL", "BAJ" };
 
-	static int articleInsertAFrame = 3;
-	static int articleInsertPbl = 3;
-	static int articleInsertPdc = 3;
+	static int articleInsertAFrame =0;
+	static int articleInsertPbl = 0;
+	static int articleInsertPdc = 97;
 
 	// *******************************************************************
 

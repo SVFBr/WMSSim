@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.ssi.schaefer.CreateDatFileApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.371 sec - in com.ssi.schaefer.CreateDatFileApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.424 sec - in com.ssi.schaefer.CreateDatFileApplicationTests
