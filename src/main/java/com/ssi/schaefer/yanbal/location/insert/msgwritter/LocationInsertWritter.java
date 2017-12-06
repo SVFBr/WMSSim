@@ -45,7 +45,7 @@ public class LocationInsertWritter {
 		System.out.println(mapLocation.size() + " " + deviceType + " geocode free ");
 		System.out.println(mapSkuCode.size() + " SKUs without geocode " + deviceType + "\n");
 
-		if (mapSkuCode.size() > 0) {
+		if (mapLocation.size() > 0) {
 
 			int line = mapLocation.size();
 			if (line >= mapSkuCode.size()) {
