@@ -11,7 +11,8 @@
 
 		<div class="page-header">
 			<div class="container-fluid">
-				<h2>YANBOG - Create Stations & Geocode Tests</h2>
+				<h2>YANBOG - Create Stations & Geocode Tests </h2>
+				<h3>[SKU_LOCATION_MAP MUST BE FILLED] </h3>
 			</div>
 		</div>
 
@@ -45,18 +46,18 @@
 				</div>				
 				
 				<div class="form-group">
-					<label for="input-produto-nome">One order to each geocode from Aframe (order nº i.e.: 8300000)</label> 
+					<label for="input-produto-nome">One order to each Aframe's geocode (order nº i.e.: 8300000)</label> 
 					<input id="aframe" oninvalid="this.setCustomValidity('This field must be filled with integer numbers')" oninput="this.setCustomValidity('')" type="text" required="required" name="numbers" pattern="[0-9]+$" class="form-control" placeholder="0" th:field="*{orderInsertAFrameAllGeocodes}" />
 				</div>
 				
 				
 				<div class="form-group">
-					<label for="input-produto-nome">One order to each geocode from Pbl (order nº i.e.: 8400000)</label> 
+					<label for="input-produto-nome">One order to each Pbl's geocode (order nº i.e.: 8400000)</label> 
 					<input id="pbl" oninvalid="this.setCustomValidity('This field must be filled with integer numbers')" oninput="this.setCustomValidity('')" type="text" required="required" name="numbers" pattern="[0-9]+$" class="form-control" placeholder="0" th:field="*{orderInsertPblAllGeocodes}" />
 				</div>
 				
 				<div class="form-group">
-					<label for="input-produto-nome">One order to each geocode from Pdc (order nº i.e.: 8500000)</label> 
+					<label for="input-produto-nome">One order to each Pdc's geocode (order nº i.e.: 8500000)</label> 
 					<input id="pdc" oninvalid="this.setCustomValidity('This field must be filled with integer numbers')" oninput="this.setCustomValidity('')" type="text" required="required" name="numbers" pattern="[0-9]+$" class="form-control" placeholder="0" th:field="*{orderInsertPdcAllGeocodes}" />
 				</div>
 				<div class="form-group">

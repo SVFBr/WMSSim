@@ -41,6 +41,7 @@ public class WebSenderLocationInsert {
 
 		LocationInsertWritter.main("/locationInsertBAJ", "BAJ", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertBAJ", wamasHostIpRequested);
-		
+	
+		CSVUtils.deleteAllFolders();
 	}
 }
