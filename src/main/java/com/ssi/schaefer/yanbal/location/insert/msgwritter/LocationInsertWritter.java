@@ -42,8 +42,8 @@ public class LocationInsertWritter {
 		List<HashMap<String, String>> mapLocation = DatabaseQueries.executeQuery(mapLocationSql, wamasHostIpRequested);
 		List<HashMap<String, String>> mapSkuCode = DatabaseQueries.executeQuery(mapSkuCodeSql, wamasHostIpRequested);
 
-		System.out.println("\n" + mapLocation.size() + " " + deviceType + " SKUs " );
-		System.out.println(mapSkuCode.size() + " SKUs without location " + deviceType);
+		System.out.println(mapLocation.size() + " " + deviceType + " SKUs ");
+		System.out.println(mapSkuCode.size() + " SKUs without location " + deviceType + "\n");
 
 		if (mapSkuCode.size() > 0) {
 

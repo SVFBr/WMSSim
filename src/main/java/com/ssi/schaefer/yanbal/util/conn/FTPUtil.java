@@ -29,7 +29,7 @@ public class FTPUtil {
 	public static void uploadDirectory(FTPClient ftpClient, String remoteDirPath, String localParentDir,
 			String remoteParentDir) throws IOException {
 
-		System.out.println("LISTING directory: " + localParentDir + "\n");
+		System.out.print("  LISTING directory: " + localParentDir + "\n");
 
 		File localDir = new File(localParentDir);
 		File[] subFiles = localDir.listFiles();
@@ -43,20 +43,20 @@ public class FTPUtil {
 				if (item.isFile()) {
 					// upload the file
 					String localFilePath = item.getAbsolutePath();
-					System.out.println("About to upload the file: " + localFilePath);
+					System.out.println("  About to upload the file:" + localFilePath);
 					boolean uploaded = uploadSingleFile(ftpClient, localFilePath, remoteFilePath);
 					if (uploaded) {
-						System.out.println("UPLOADED a file to: " + remoteFilePath + "\n");
+						System.out.println("  UPLOADED a file to: " + remoteFilePath + "\n");
 					} else {
-						System.out.println("COULD NOT upload the file: " + localFilePath);
+						System.out.println("  COULD NOT upload the file: " + localFilePath);
 					}
 				} else {
 					// create directory on the server
 					boolean created = ftpClient.makeDirectory(remoteFilePath);
 					if (created) {
-						System.out.println("CREATED the directory: " + remoteFilePath);
+						System.out.println("  CREATED the directory: " + remoteFilePath);
 					} else {
-						System.out.println("COULD NOT create the directory: " + remoteFilePath);
+						System.out.println("  COULD NOT create the directory: " + remoteFilePath);
 					}
 
 					// upload the sub directory

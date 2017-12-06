@@ -33,15 +33,14 @@ public class WebSenderLocationInsert {
 
 	public void createInsert(String wamasHostIpRequested) throws ClassNotFoundException, SQLException, IOException {
 
-		LocationInsertWritter.main("/locationInsertAf", "AFF", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertAFR", "AFR", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertAFR", wamasHostIpRequested);
 
-		LocationInsertWritter.main("/locationInsertPb", "PBL", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertPBL", "PBL", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertPBL", wamasHostIpRequested);
 
-		LocationInsertWritter.main("/locationInsertPd", "BAJ", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertBAJ", "BAJ", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertBAJ", wamasHostIpRequested);
 		
-		CSVUtils.deleteAllFolders();
 	}
 }

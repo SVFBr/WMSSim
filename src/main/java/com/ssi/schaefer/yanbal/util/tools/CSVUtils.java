@@ -84,6 +84,7 @@ public class CSVUtils {
 
 	public static void deleteAllFolders() throws IOException {
 		FileUtils.deleteDirectory(new File(localDirPath));
+		System.out.println("\n[All folders/dat files were transfered and deleted...] \n");
 	}
 
 }

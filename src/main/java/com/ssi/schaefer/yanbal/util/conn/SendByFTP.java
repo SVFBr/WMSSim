@@ -13,13 +13,12 @@ public class SendByFTP {
 
 		FTPClient ftpClient = new FTPClient();
 		try {
-			//ftpClient.connect("192.168.173.227");
 			ftpClient.connect(wamasHostIp);
 			ftpClient.login("convey99", "keines");
 			ftpClient.changeWorkingDirectory("/hcom/to_ssi");
 			ftpClient.enterLocalPassiveMode();
 
-			System.out.println("Connected");
+			System.out.println("\n  [Connected to " + wamasHostIp + "\n");
 
 			CSVUtils cvs = new CSVUtils();
 			String remoteDirPath = "/hcom/to_ssi";
@@ -30,7 +29,8 @@ public class SendByFTP {
 			ftpClient.logout();
 			ftpClient.disconnect();
 
-			System.out.println("Disconnected");
+			System.out.println("  Disconnected from " + wamasHostIp + "]\n");
+			System.out.println("==================================================\n");
 
 		} catch (IOException ex) {
 			ex.printStackTrace();

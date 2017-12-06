@@ -1,20 +1,10 @@
 package com.ssi.schaefer.yanbal.barcode.insert;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
-
-import com.ssi.schaefer.yanbal.article.insert.msgwritter.ArticleInsertWritter;
 import com.ssi.schaefer.yanbal.barcode.insert.msgwritter.BarcodeInsertWritter;
 import com.ssi.schaefer.yanbal.util.conn.SendByFTP;
-import com.ssi.schaefer.yanbal.util.dbutils.DatabaseQueries;
-import com.ssi.schaefer.yanbal.util.dbutils.QueriesLauncher;
 import com.ssi.schaefer.yanbal.util.tools.CSVUtils;
 
 public class WebSenderBarcodeInsert {

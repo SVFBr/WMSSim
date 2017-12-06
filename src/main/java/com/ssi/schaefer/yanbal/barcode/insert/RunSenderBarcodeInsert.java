@@ -28,12 +28,12 @@ public class RunSenderBarcodeInsert {
 		BarcodeInsertWritter.main("/barcodeInsertAFR", "AFR", wamasHostIpRequested);
 		SendByFTP.main("/barcodeInsertAFR", wamasHostIpRequested);
 
+		BarcodeInsertWritter.main("/barcodeInsertBAJ", "BAJ", wamasHostIpRequested);
+		SendByFTP.main("/barcodeInsertBAJ", wamasHostIpRequested);
+		
 		BarcodeInsertWritter.main("/barcodeInsertPBL", "PBL", wamasHostIpRequested);
 		SendByFTP.main("/barcodeInsertPBL", wamasHostIpRequested);
 
-		BarcodeInsertWritter.main("/barcodeInserBAJ", "BAJ", wamasHostIpRequested);
-		SendByFTP.main("/barcodeInsertBAJ", wamasHostIpRequested);
-		
 		CSVUtils.deleteAllFolders();
 	}
 }

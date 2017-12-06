@@ -31,10 +31,9 @@ public class RunSenderLocationInsert {
 		LocationInsertWritter.main("/locationInsertPBL", "PBL", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertPBL", wamasHostIpRequested);
 
-		LocationInsertWritter.main("/locationInsertPDC", "BAJ", wamasHostIpRequested);
+		LocationInsertWritter.main("/locationInsertBAJ", "BAJ", wamasHostIpRequested);
 		SendByFTP.main("/locationInsertBAJ", wamasHostIpRequested);
 		
-		CSVUtils.deleteAllFolders();
 
 	}
 }

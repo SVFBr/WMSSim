@@ -30,7 +30,7 @@ public class BarcodeInsertWritter {
 		String selectArticlesByDevice = "SELECT SKU_CODE FROM PWX.SKU WHERE SKU_ID NOT IN (SELECT SKU_ID FROM PWX.SKU_BARCODE) AND SKU_CODE LIKE '" + deviceType + "%' ORDER BY SKU_CODE";
 		List<HashMap<String, String>> mapArticles = DatabaseQueries.executeQuery(selectArticlesByDevice, wamasHostIpRequested);
 
-		System.out.println(mapArticles.size() + " SKUs sem barcodes para " + deviceType);
+		System.out.println(mapArticles.size() + " SKUs sem barcodes para " + deviceType + "\n");
 
 		if (mapArticles.size() > 0) {
 
