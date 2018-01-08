@@ -65,7 +65,7 @@ public class OrderInsertWritterPrize {
 				File pathOnePage = CSVUtils.genPath(folderName);
 				String csvFileOnePAge = pathOnePage + "/" + String.format("%07d", incrementPageNumber++) + ".dat";
 				FileWriter writerOnePAge = new FileWriter(csvFileOnePAge);
-				CSVUtils.writeLine(writerOnePAge, Arrays.asList("<order_insert_prize order_id=\"" + StringUtils.leftPad(orNum, 7, "0") + "\" sub_order_id=\"1" + "\" host_order_id=\"SPY\"" + " tu_type=\"" + Tools.getRandBoxType() + "\" start_station=\"AIP02\" check=\"false\" departure_time=\"172531\" departure_date=\"20171105\" print=\"false\" ramp_name=\"SHP0" + Tools.getRandRotate(1, 7) + "\"/>"));
+				CSVUtils.writeLine(writerOnePAge, Arrays.asList("<order_insert_prize order_id=\"" + StringUtils.leftPad(orNum, 7, "0") + "\" sub_order_id=\"1" + "\" host_order_id=\"SPY\"" + " tu_type=\"" + Tools.getRandBoxTypeN() + "\" start_station=\"AIP02\" check=\"false\" departure_time=\"172531\" departure_date=\"20171105\" print=\"false\" ramp_name=\"SHP0" + Tools.getRandRotate(1, 7) + "\"/>"));
 				//CSVUtils.writeLine(writerOnePAge, Arrays.asList(" <station station_id=\"SHL0" + Tools.getRotate(1, 8) + "\"/>"));
 				//CSVUtils.writeLine(writerOnePAge, Arrays.asList("</order_insert_prize>"));
 				writerOnePAge.flush();

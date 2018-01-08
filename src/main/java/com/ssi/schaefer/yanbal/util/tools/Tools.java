@@ -18,8 +18,14 @@ public class Tools {
 		return random.nextBoolean();
 	}
 
-	public static String getRandBoxType() {
+	public static String getRandBoxTypeC() {
 		String[] boxTypes = new String[] { "C1", "C2", "C3", "C4", "A1", "A2" };
+		return boxTypes[rnd.nextInt(boxTypes.length)];
+		// return boxTypes[rand.nextInt(boxTypes.length)];
+	}
+
+	public static String getRandBoxTypeN() {
+		String[] boxTypes = new String[] { "131", "132", "133", "134", "135", "136" };
 		return boxTypes[rnd.nextInt(boxTypes.length)];
 		// return boxTypes[rand.nextInt(boxTypes.length)];
 	}
