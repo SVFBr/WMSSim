@@ -20,29 +20,30 @@ public class RunSenderOrderInsert {
 	 **/
 	// *******************************************************************
 
-	// static String wamasHostIpRequested = "192.168.173.222";
-	static String wamasHostIpRequested = "10.34.234.2";
+	 static String wamasHostIpRequested = "192.168.173.222";
+//	static String wamasHostIpRequested = "10.34.234.2";
 
 	static String[] arrDevice = { "AFR", "PBLUP", "PBLDOWN", "PBLMIX", "BAJ", "PRIZE", "MIX" };
 	static String[] arrDeviceII = { "OneToEachStation", "OneToAllStations", "AF", "P", "BAJ" };
 
 	// HERE YOU MUST INDICATE HOW MANY ORDERS SHOULD BE SEND TO HOST
 
-	static int orderInsertAframe = 1;
-	static int orderInsertPblUp = 0;
-	static int orderInsertPblDown = 0;
-	static int orderInsertPblMixed = 0;
-	static int orderInsertPdc = 0;
-	static int orderInsertPrize = 0;
-	static int orderInsertMix = 0;
+	static int orderInsertAframe = 1; 	//910
+	static int orderInsertPblUp = 0; 	//921
+	static int orderInsertPblDown = 0;	//
+	static int orderInsertPblMixed = 0;	//
+	static int orderInsertPdc = 0;		//
+	static int orderInsertPrize = 0;	//
+	
+	static int orderInsertMix = 0;		//
 
-	static int orderInsertOneToEachStation = 0;
-	static int orderInsertOneToAllStations = 0;
+	static int orderInsertOneToEachStation = 0;		//
+	static int orderInsertOneToAllStations = 0;		//
 
 	// HERE YOU MUST INDICATE 1-YES OR 0-NO TO SEND DEVICE TESTS
-	static int orderInsertAFrameAllGeocodes = 0;
-	static int orderInsertPblAllGeocodes = 0;
-	static int orderInsertPdcAllGeocodes = 0;
+	static int orderInsertAFrameAllGeocodes = 0;	//
+	static int orderInsertPblAllGeocodes = 0;		//
+	static int orderInsertPdcAllGeocodes = 0;		//
 
 	// *******************************************************************
 
@@ -53,49 +54,49 @@ public class RunSenderOrderInsert {
 			String deviceType = arrDevice[0];
 			int numberOfArticles = orderInsertAframe;
 			String folderName = "/orderInsertAframe";
-			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 9100000, "9100000");
-			SendByFTP.main(folderName, wamasHostIpRequested);
+			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 7100000, "7100000");
+			//SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		if (orderInsertPblUp > 0) {
 			String deviceType = arrDevice[1];
 			int numberOfArticles = orderInsertPblUp;
 			String folderName = "/orderInsertPblUp";
-			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 9210000, "9210000");
+			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 7210000, "7210000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		if (orderInsertPblDown > 0) {
 			String deviceType = arrDevice[2];
 			int numberOfArticles = orderInsertPblDown;
 			String folderName = "/orderInsertPblDown";
-			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 9220000, "9220000");
+			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 7220000, "7220000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		if (orderInsertPblMixed > 0) {
 			String deviceType = arrDevice[3];
 			int numberOfArticles = orderInsertPblMixed;
 			String folderName = "/orderInsertPblMixed";
-			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 9230000, "9230000");
+			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 7230000, "7230000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		if (orderInsertPdc > 0) {
 			String deviceType = arrDevice[4];
 			int numberOfArticles = orderInsertPdc;
 			String folderName = "/orderInsertPdc";
-			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 9300000, "9300000");
+			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 7300000, "7300000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		if (orderInsertPrize > 0) {
 			String deviceType = arrDevice[5];
 			int numberOfArticles = orderInsertPrize;
 			String folderName = "/orderInsertPrize";
-			OrderInsertWritterPrize.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 9400000, "9400000");
+			OrderInsertWritterPrize.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 7400000, "7400000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 		if (orderInsertMix > 0) {
 			String deviceType = arrDevice[6];
 			int numberOfArticles = orderInsertMix;
 			String folderName = "/orderInsertMix";
-			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 9990000, "9990000");
+			OrderInsertWritter.main(deviceType, numberOfArticles, folderName, wamasHostIpRequested, 7990000, "7990000");
 			SendByFTP.main(folderName, wamasHostIpRequested);
 		}
 

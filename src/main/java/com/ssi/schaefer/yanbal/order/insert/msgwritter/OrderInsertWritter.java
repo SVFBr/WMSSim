@@ -35,32 +35,32 @@ public class OrderInsertWritter {
 		// --------------------------------------------------------------------
 
 		if (deviceType == "AFR") {
-			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '910%'";
+			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '710%'";
 			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE LIKE 'AF%' ORDER BY SKU_CODE";
 			files = numberOfArticles;
 		}
 		if (deviceType == "PBLUP") {
-			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '921%'";
+			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '721%'";
 			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE BETWEEN 'P04-101' AND 'P11-307' ORDER BY SKU_CODE";
 			files = numberOfArticles;
 		}
 		if (deviceType == "PBLDOWN") {
-			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '922%'";
+			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '722%'";
 			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE BETWEEN 'P12-101' AND 'P19-307' ORDER BY SKU_CODE";
 			files = numberOfArticles;
 		}
 		if (deviceType == "PBLMIX") {
-			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '923%'";
+			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '723%'";
 			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE BETWEEN 'P04-101' AND 'P19-307' ORDER BY SKU_CODE";
 			files = numberOfArticles;
 		}
 		if (deviceType == "BAJ") {
-			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '930%'";
+			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '730%'";
 			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID WHERE GEOCODE LIKE 'BAJ%' ORDER BY SKU_CODE";
 			files = numberOfArticles;
 		}
 		if (deviceType == "MIX") {
-			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '999%'";
+			mapMaxOrderCodeSql = "SELECT MAX(ORDER_CODE) FROM PWX.ORDER_REQUEST WHERE ORDER_CODE LIKE '799%'";
 			mapSql = "SELECT SLM.SLM_ID, SKU.SKU_CODE, L.GEOCODE FROM SKU_LOCATION_MAP SLM INNER JOIN SKU ON SLM.SKU_ID = SKU.SKU_ID INNER JOIN LOCATION L ON L.L_ID = SLM.L_ID ORDER BY SKU_CODE";
 			files = numberOfArticles;
 		}
@@ -103,7 +103,7 @@ public class OrderInsertWritter {
 							String csvFileMorePage = pathMorePg + "/" + String.format("%07d", incrementPageNumber++) + ".dat";
 
 							FileWriter writerMorePage = new FileWriter(csvFileMorePage);
-							CSVUtils.writeLine(writerMorePage, Arrays.asList("<order_insert order_id=\"" + StringUtils.leftPad(orNum, 7, "0") + "\" " + "sub_order_id=\"" + pg + "\" host_order_id=\"SPY\"" + " tu_type=\"" + Tools.getRandBoxTypeN() + "\"" + " check=\"false\" departure_time=\"172531\" departure_date=\"20171105\" print=\"false\">"));
+							CSVUtils.writeLine(writerMorePage, Arrays.asList("<order_insert order_id=\"" + StringUtils.leftPad(orNum, 7, "0") + "\" " + "sub_order_id=\"" + pg + "\" host_order_id=\"SPY\"" + " tu_type=\"" + Tools.getRandBoxTypeN() + "\"" + " check=\"true\" departure_time=\"172531\" departure_date=\"20171105\" print=\"false\">"));
 							CSVUtils.writeLine(writerMorePage, Arrays.asList(" <station station_id=\"POP" + Tools.getRandRotate(1, 3) + "\"/>"));
 							CSVUtils.writeLine(writerMorePage, Arrays.asList(" <station station_id=\"POPXL\"/>"));
 							CSVUtils.writeLine(writerMorePage, Arrays.asList(" <station station_id=\"SHL0" + Tools.getRandRotate(1, 8) + "\"/>"));
@@ -121,7 +121,7 @@ public class OrderInsertWritter {
 						File pathOnePage = CSVUtils.genPath(folderName);
 						String csvFileOnePAge = pathOnePage + "/" + String.format("%07d", incrementPageNumber++) + ".dat";
 						FileWriter writerOnePAge = new FileWriter(csvFileOnePAge);
-						CSVUtils.writeLine(writerOnePAge, Arrays.asList("<order_insert order_id=\"" + StringUtils.leftPad(orNum, 7, "0") + "\" " + "sub_order_id=\"1" + "\" host_order_id=\"SPY\"" + " tu_type=\"" + Tools.getRandBoxTypeN() + "\"" + " check=\"false\" departure_time=\"172531\" departure_date=\"20171105\" print=\"false\">"));
+						CSVUtils.writeLine(writerOnePAge, Arrays.asList("<order_insert order_id=\"" + StringUtils.leftPad(orNum, 7, "0") + "\" " + "sub_order_id=\"1" + "\" host_order_id=\"SPY\"" + " tu_type=\"" + Tools.getRandBoxTypeN() + "\"" + " check=\"true\" departure_time=\"172531\" departure_date=\"20171105\" print=\"false\">"));
 						CSVUtils.writeLine(writerOnePAge, Arrays.asList(" <station station_id=\"POP" + Tools.getRandRotate(1, 2) + "\"/>"));
 						CSVUtils.writeLine(writerOnePAge, Arrays.asList(" <station station_id=\"POPXL\"/>"));
 						CSVUtils.writeLine(writerOnePAge, Arrays.asList(" <station station_id=\"SHL0" + Tools.getRandRotate(1, 8) + "\"/>"));
